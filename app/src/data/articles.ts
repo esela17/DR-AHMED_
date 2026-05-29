@@ -1,0 +1,140 @@
+import type { ArticleData } from '@/types';
+
+export const articles: ArticleData[] = [
+  {
+    id: 1,
+    slug: 'lasik-complete-guide',
+    categoryAr: 'جراحة العيون',
+    categoryEn: 'Eye Surgery',
+    titleAr: 'كل ما تريد معرفته عن جراحة الليزك: هل أنت مرشح مناسب؟',
+    titleEn: 'Everything You Need to Know About LASIK: Are You a Suitable Candidate?',
+    excerptAr: 'جراحة الليزك هي واحدة من أكثر العمليات شيوعاً في مصر. لكن هل تعرف ما هي الشروط؟ وكم تكلفة العملية؟ وما هي أحدث التقنيات المتاحة؟ في هذا المقال الشامل نجيب عن كل أسئلتك.',
+    excerptEn: 'LASIK is one of the most common procedures in Egypt. But do you know the requirements? How much does it cost? What are the latest techniques? In this comprehensive article we answer all your questions.',
+    image: '/images/blog/blog-featured.jpg',
+    readTime: 8,
+    date: '٢٥ مايو ٢٠٢٥',
+    featured: true,
+    body: [
+      { type: 'p', contentAr: 'جراحة الليزك هي واحدة من أكثر عمليات تصحيح النظر شيوعاً في مصر والعالم. كل عام، آلاف المصريين يستعيدون بصرهم بوضوح ٦/٦ خلال ربع ساعة فقط. لكن هل أنت مرشح مناسب؟ وكم تكلفة العملية؟ وما أحدث التقنيات؟ هذا المقال يجوب عن كل أسئلتك.', contentEn: 'LASIK is one of the most common vision correction procedures in Egypt and the world. Every year, thousands of Egyptians regain 6/6 vision in just 15 minutes. But are you a suitable candidate? How much does it cost? What are the latest techniques? This article answers all your questions.' },
+      { type: 'h2', contentAr: 'ما هي جراحة الليزك؟', contentEn: 'What Is LASIK Surgery?' },
+      { type: 'p', contentAr: 'جراحة الليزك (LASIK) هي إجراء يستخدم الليزر لإعادة تشكيل القرنية وتحسين الرؤية. الهدف هو تصحيح قصر النظر، طول النظر، والاستجماتيزم. العملية تستغرق ١٠-١٥ دقيقة لكل عين، ومعظم المرضى يشعرون بتحسن في الرؤية خلال ٢٤ ساعة.', contentEn: 'LASIK is a procedure that uses a laser to reshape the cornea and improve vision. The goal is to correct nearsightedness, farsightedness, and astigmatism. The procedure takes 10-15 minutes per eye, and most patients feel improvement within 24 hours.' },
+      { type: 'h2', contentAr: 'هل أنت مرشح مناسب لليزك؟', contentEn: 'Are You a Suitable Candidate for LASIK?' },
+      { type: 'h3', contentAr: 'الشروط الأساسية', contentEn: 'Basic Requirements' },
+      { type: 'ul', contentAr: '', contentEn: '', items: [
+        { contentAr: 'عمرك ١٨ سنة على الأقل', contentEn: 'You are at least 18 years old' },
+        { contentAr: 'ثبات النظر لمدة سنة على الأقل', contentEn: 'Stable vision for at least one year' },
+        { contentAr: 'سمك القرنية مناسب', contentEn: 'Adequate corneal thickness' },
+        { contentAr: 'لا تعاني من أمراض القرنية', contentEn: 'No corneal diseases' },
+        { contentAr: 'لست حاملاً أو مرضعة', contentEn: 'Not pregnant or breastfeeding' },
+      ]},
+      { type: 'h2', contentAr: 'أنواع جراحة الليزك', contentEn: 'Types of LASIK Surgery' },
+      { type: 'ol', contentAr: '', contentEn: '', items: [
+        { contentAr: 'الليزك التقليدي (Microkeratome) — الطريقة الكلاسيكية باستخدام شفرة آلية لإنشاء رفرف القرنية.', contentEn: 'Traditional LASIK — The classic method using a mechanical blade to create the corneal flap.' },
+        { contentAr: 'الفيمتو ليزك (Femto-LASIK) — بدون شفرات! يستخدم ليزر الفيمتوثانية لإنشاء الرفرف بدقة فائقة.', contentEn: 'Femto-LASIK — Blade-free! Uses femtosecond laser to create the flap with extreme precision.' },
+        { contentAr: 'سمايل ليزك (SMILE) — أحدث تقنية بدون رفرف. مناسب لقصر النظر المعتدل.', contentEn: 'SMILE — Latest flapless technique. Suitable for moderate nearsightedness.' },
+        { contentAr: 'تصحيح سطحي (PRK/TransPRK) — بدون رفرف على الإطلاق. مناسب لمن لديهم قرنيات رقيقة.', contentEn: 'Surface Correction — No flap at all. Suitable for those with thin corneas.' },
+      ]},
+      { type: 'h2', contentAr: 'تكلفة جراحة الليزك في مصر', contentEn: 'LASIK Cost in Egypt' },
+      { type: 'p', contentAr: 'تتراوح تكلفة جراحة الليزك في مصر بين ١٢,٠٠٠ إلى ٣٠,٠٠٠ جنيه مصري للعينين، حسب التقنية المستخدمة ومكان العملية. الفيمتو ليزك أغلى قليلاً من الليزك التقليدي لكنه يوفر دقة أعلى. تذكر: العين أغلى ما تملك، فلا تضع السعر فوق الجودة.', contentEn: 'LASIK cost in Egypt ranges from EGP 12,000 to 30,000 for both eyes, depending on the technique used and location. Femto-LASIK is slightly more expensive than traditional LASIK but offers higher precision. Remember: your eyes are your most valuable asset, so don\'t prioritize price over quality.' },
+      { type: 'blockquote', contentAr: 'اختيار الطبيب أهم من اختيار السعر. د. أحمد يستخدم أحدث أجهزة الفيمتو ليزك العالمية ويقدم تشخيصاً مجانياً لتحديد التقنية الأنسب لحالتك.', contentEn: 'Choosing the doctor is more important than choosing the price. Dr. Ahmed uses the latest global Femto-LASIK equipment and offers free diagnosis to determine the most suitable technique for your case.' },
+      { type: 'h2', contentAr: 'التحضير قبل العملية', contentEn: 'Preparing for Surgery' },
+      { type: 'ul', contentAr: '', contentEn: '', items: [
+        { contentAr: 'توقف عن ارتداء العدسات اللاصقة (٢ أسابيع للعدسات الصلبة، ٣ أيام للطرية)', contentEn: 'Stop wearing contact lenses (2 weeks for hard lenses, 3 days for soft)' },
+        { contentAr: 'لا تضع مكياج في يوم العملية', contentEn: 'No makeup on surgery day' },
+        { contentAr: 'أحضر معك مرافق ليرافقك بعد العملية', contentEn: 'Bring someone to accompany you after surgery' },
+      ]},
+      { type: 'h2', contentAr: 'ماذا تتوقع بعد العملية؟', contentEn: 'What to Expect After Surgery?' },
+      { type: 'p', contentAr: 'معظم المرضى يشعرون بتحسن في الرؤية خلال ساعات. قد تشعر بجفاف بسيط وحساسية للضوء لبضعة أيام. الدكتور سيصف لك قطرات مضادة للالتهابات والجفاف. المتابعة بعد أسبوع وشهر ضرورية.', contentEn: 'Most patients feel vision improvement within hours. You may feel slight dryness and light sensitivity for a few days. The doctor will prescribe anti-inflammatory and dry eye drops. Follow-up after one week and one month is essential.' },
+    ],
+  },
+  {
+    id: 2,
+    slug: 'cataract-symptoms',
+    categoryAr: 'أمراض العيون',
+    categoryEn: 'Eye Diseases',
+    titleAr: 'أعراض المياه البيضاء: متى يجب زيارة الطبيب؟',
+    titleEn: 'Cataract Symptoms: When Should You Visit a Doctor?',
+    excerptAr: 'ضبابية الرؤية، حساسية للضوء، صعوبة القيادة ليلاً… تعرف على أهم علامات المياه البيضاء وكيفية علاجها.',
+    excerptEn: 'Blurred vision, light sensitivity, difficulty driving at night… Learn the key signs of cataracts and how to treat them.',
+    image: '/images/blog/blog-cataract.jpg',
+    readTime: 5,
+    date: '٢٠ مايو ٢٠٢٥',
+  },
+  {
+    id: 3,
+    slug: 'lasik-vs-femto',
+    categoryAr: 'جراحة العيون',
+    categoryEn: 'Eye Surgery',
+    titleAr: 'الفرق بين الليزك والفيمتو ليزك: أيهما أفضل لك؟',
+    titleEn: 'The Difference Between LASIK and Femto-LASIK: Which Is Better for You?',
+    excerptAr: 'تقنيات متعددة لتصحيح النظر… نشرح الفروق بين كل تقنية ونوضح أيها الأنسب لحالتك.',
+    excerptEn: 'Multiple techniques for vision correction… We explain the differences between each and clarify which is best for your case.',
+    image: '/images/blog/blog-lasik.jpg',
+    readTime: 6,
+    date: '١٨ مايو ٢٠٢٥',
+  },
+  {
+    id: 4,
+    slug: 'eye-health-mistakes',
+    categoryAr: 'نصائح صحية',
+    categoryEn: 'Health Tips',
+    titleAr: '١٠ أخطاء يومية تدمر صحة عينيك',
+    titleEn: '10 Daily Mistakes That Damage Your Eye Health',
+    excerptAr: 'النظر للشاشات لفترات طويلة، عدم ارتداء نظارات الشمس، النوم بعدسات العين… أخطاء بسيطة تسبب ضرراً كبيراً.',
+    excerptEn: 'Long screen time, not wearing sunglasses, sleeping with contacts… Simple mistakes that cause major damage.',
+    image: '/images/blog/blog-mistakes.jpg',
+    readTime: 5,
+    date: '١٥ مايو ٢٠٢٥',
+  },
+  {
+    id: 5,
+    slug: 'diabetic-retinopathy',
+    categoryAr: 'أمراض العيون',
+    categoryEn: 'Eye Diseases',
+    titleAr: 'الشبكية السكرية: الوقاية أهم من العلاج',
+    titleEn: 'Diabetic Retinopathy: Prevention Is Better Than Cure',
+    excerptAr: 'مرضى السكر أكثر عرضة لمشاكل الشبكية. تعرف على كيفية الوقاية والكشف المبكر للحفاظ على بصرك.',
+    excerptEn: 'Diabetics are more susceptible to retinal problems. Learn how to prevent and detect early to preserve your vision.',
+    image: '/images/blog/blog-diabetic.jpg',
+    readTime: 7,
+    date: '١٠ مايو ٢٠٢٥',
+  },
+  {
+    id: 6,
+    slug: 'lens-implantation',
+    categoryAr: 'جراحة العيون',
+    categoryEn: 'Eye Surgery',
+    titleAr: 'زراعة العدسات: البديل الأمثل لمن لا يناسبهم الليزك',
+    titleEn: 'Lens Implantation: The Best Alternative for Those Unsuitable for LASIK',
+    excerptAr: 'ليس كل مريض مرشحاً لليزك. تعرف على تقنية زراعة العدسات الذكية وكيف تعطي نتائج مذهلة.',
+    excerptEn: 'Not every patient is a LASIK candidate. Learn about smart lens implantation and how it delivers amazing results.',
+    image: '/images/blog/blog-lens.jpg',
+    readTime: 5,
+    date: '٥ مايو ٢٠٢٥',
+  },
+  {
+    id: 7,
+    slug: 'my-lasik-journey',
+    categoryAr: 'تجارب المرضى',
+    categoryEn: 'Patient Stories',
+    titleAr: 'رحلتي مع الليزك: من النظارات إلى الرؤية ٦/٦',
+    titleEn: 'My LASIK Journey: From Glasses to 6/6 Vision',
+    excerptAr: 'قصة حقيقية لمريضة خضعت لعملية الليزك في عيادة د. أحمد. كل ما تريدين معرفته من وجهة نظر مريضة.',
+    excerptEn: 'A true story of a patient who underwent LASIK at Dr. Ahmed\'s clinic. Everything you want to know from a patient\'s perspective.',
+    image: '/images/blog/blog-story.jpg',
+    readTime: 4,
+    date: '١ مايو ٢٠٢٥',
+  },
+];
+
+export const getArticleBySlug = (slug: string): ArticleData | undefined => {
+  return articles.find(a => a.slug === slug);
+};
+
+export const getRelatedArticles = (slug: string, limit: number = 3): ArticleData[] => {
+  const article = getArticleBySlug(slug);
+  if (!article) return [];
+  return articles
+    .filter(a => a.slug !== slug && a.categoryAr === article.categoryAr)
+    .slice(0, limit);
+};

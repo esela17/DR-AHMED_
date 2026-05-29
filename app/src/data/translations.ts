@@ -1,0 +1,172 @@
+type TranslationValue = { ar: string; en: string };
+
+const translations: Record<string, TranslationValue> = {
+  // Navigation
+  'nav.home': { ar: 'الرئيسية', en: 'Home' },
+  'nav.about': { ar: 'عن الدكتور', en: 'About' },
+  'nav.services': { ar: 'الخدمات', en: 'Services' },
+  'nav.testimonials': { ar: 'آراء المرضى', en: 'Testimonials' },
+  'nav.blog': { ar: 'المدونة', en: 'Blog' },
+  'nav.contact': { ar: 'اتصل بنا', en: 'Contact' },
+  'nav.book': { ar: 'احجز موعد', en: 'Book Now' },
+  'nav.lang': { ar: 'EN', en: 'عربي' },
+
+  // Hero
+  'hero.badge': { ar: 'أفضل دكتور عيون في مصر', en: 'Best Eye Doctor in Egypt' },
+  'hero.headline': { ar: 'رؤية أوضح… وحياة أفضل تبدأ من هنا', en: 'Clearer Vision… A Better Life Starts Here' },
+  'hero.subtitle': { ar: 'د. أحمد عبدالله مهلهل — أخصائي طب وجراحة العيون بخبرة ٢٠+ عاماً. أحدث التقنيات، أدق التشخيصات، ورعاية شخصية لكل مريض.', en: 'Dr. Ahmed Abdullah Muhlhal — Ophthalmology Specialist with 20+ Years of Experience. Latest Technology, Precise Diagnosis, Personalized Care for Every Patient.' },
+  'hero.cta.primary': { ar: 'احجز موعدك الآن', en: 'Book Appointment' },
+  'hero.cta.secondary': { ar: 'استشر عبر واتساب', en: 'WhatsApp Consult' },
+  'hero.stat1.num': { ar: '٢٠+', en: '20+' },
+  'hero.stat1.label': { ar: 'عام خبرة', en: 'Years Exp' },
+  'hero.stat2.num': { ar: '١٥,٠٠٠+', en: '15,000+' },
+  'hero.stat2.label': { ar: 'مريض سعيد', en: 'Happy Patients' },
+  'hero.stat3.num': { ar: '٩٩٪', en: '99%' },
+  'hero.stat3.label': { ar: 'نسبة نجاح', en: 'Success Rate' },
+  'hero.widget.title': { ar: 'احجز موعدك', en: 'Book Now' },
+  'hero.widget.service': { ar: 'اختر الخدمة', en: 'Select Service' },
+  'hero.widget.date': { ar: 'اختر التاريخ', en: 'Select Date' },
+  'hero.widget.submit': { ar: 'احجز الآن', en: 'Book' },
+  'hero.mouse': { ar: 'حرك الماوس لتفاعل', en: 'Move mouse to interact' },
+
+  // Trust Bar
+  'trust.exp.label': { ar: 'عام من الخبرة', en: 'Years of Experience' },
+  'trust.patients.label': { ar: 'مريض سعيد', en: 'Happy Patients' },
+  'trust.success.label': { ar: 'نسبة نجاح العمليات', en: 'Surgery Success Rate' },
+  'trust.surgeries.label': { ar: 'عملية ناجحة', en: 'Successful Surgeries' },
+
+  // About
+  'about.badge': { ar: 'عن الدكتور', en: 'About the Doctor' },
+  'about.headline': { ar: 'د. أحمد عبدالله مهلهل… طبيب يعالج العيون بإتقان، ويعالج النفوس بإنسانية', en: 'Dr. Ahmed Abdullah Muhlhal… A Doctor Who Treats Eyes with Precision, and Souls with Humanity' },
+  'about.subtitle': { ar: 'أخصائي طب وجراحة العيون — زميل المجلس الطبي المصري', en: 'Ophthalmology Specialist — Fellow of the Egyptian Medical Board' },
+  'about.p1': { ar: 'تخرج د. أحمد عبدالله مهلهل من كلية طب القاهرة بتقدير امتياز، ثم تخصص في طب وجراحة العيون بتفوق. درس وتدرب في أفضل المراكز العالمية — من القاهرة إلى لندن ودبي — ليجمع بين الخبرة المصرية العميقة والمعايير الدولية الرفيعة.', en: 'Dr. Ahmed Abdullah Muhlhal graduated from Cairo University Faculty of Medicine with honors, then specialized in Ophthalmology with distinction. He studied and trained at the world\'s finest centers — from Cairo to London and Dubai — combining deep Egyptian expertise with international standards of excellence.' },
+  'about.p2': { ar: 'ليس مجرد طبيب عيون… د. أحمد عبدالله مهلهل يؤمن أن الرؤية الواضحة هي بوابة الحياة. كل مريض يدخل عيادته يحمل قصة، وكل عين يعالجها تحمل أحلاماً. من الطفل الذي يرى العالم لأول مرة، إلى الجد الذي يستعيد بصره بعد سنوات — كل قصة تُحفر في ذاكرته.', en: 'Not just an eye doctor… Dr. Ahmed Abdullah Muhlhal believes that clear vision is the gateway to life. Every patient who enters his clinic carries a story, and every eye he treats holds dreams. From the child seeing the world for the first time, to the grandfather regaining his sight after years — each story is etched in his memory.' },
+  'about.p3': { ar: 'مهمته بسيطة: أن يجعل كل مصري يرى الحياة بوضوح. بأحدث الأجهزة، وأدق التشخيصات، وقلب يحتوي كل مريض.', en: 'His mission is simple: to help every Egyptian see life clearly. With the latest equipment, the most precise diagnoses, and a heart that embraces every patient.' },
+  'about.cred1': { ar: 'تخرج من كلية طب القاهرة', en: 'Cairo University Graduate' },
+  'about.cred2': { ar: 'تدريب دولي في لندن ودبي', en: 'International Training London & Dubai' },
+  'about.cred3': { ar: 'رعاية إنسانية فوق المتوقع', en: 'Human Care Beyond Expectation' },
+  'about.vision.title': { ar: 'رؤيتنا', en: 'Our Vision' },
+  'about.vision.text': { ar: 'أن نكون الوجهة الأولى في مصر والعالم العربي لمن يبحث عن رؤية أوضح وحياة أفضل. نؤمن أن كل إنسان يستحق رؤية الحياة بكل تفاصيلها الجميلة.', en: 'To be the first destination in Egypt and the Arab world for those seeking clearer vision and a better life. We believe every human deserves to see life\'s beautiful details.' },
+  'about.cta': { ar: 'تعرف أكثر على الدكتور', en: 'Learn More About the Doctor' },
+  'about.card.degree': { ar: 'بكالوريوس الطب والجراحة', en: 'Bachelor of Medicine & Surgery' },
+  'about.card.university': { ar: 'جامعة القاهرة', en: 'Cairo University' },
+  'about.card.fellowship': { ar: 'زمالة طب وجراحة العيون', en: 'Fellowship in Ophthalmology' },
+  'about.card.board': { ar: 'المجلس الطبي المصري', en: 'Egyptian Medical Board' },
+
+  // Services
+  'services.badge': { ar: 'خدماتنا', en: 'Our Services' },
+  'services.headline': { ar: 'خدمات طبية متكاملة لرعاية عيونك', en: 'Comprehensive Medical Services for Your Eyes' },
+  'services.subtitle': { ar: 'نقدم أحدث تقنيات تشخيص وعلاج أمراض العيون بأيدٍ خبيرة وقلب يحتوي كل مريض', en: 'We offer the latest eye care diagnostic and treatment technologies with expert hands and a heart that cares for every patient' },
+  'services.learnMore': { ar: 'تعرف أكثر', en: 'Learn More' },
+  'services.bottom.text': { ar: 'غير متأكد من الخدمة المناسبة لك؟', en: 'Not sure which service is right for you?' },
+  'services.bottom.cta': { ar: 'احجز استشارة مجانية', en: 'Book a Free Consultation' },
+
+  // Testimonials
+  'testimonials.badge': { ar: 'آراء مرضانا', en: 'Patient Testimonials' },
+  'testimonials.headline': { ar: 'آلاف المرضى استعادوا بصرهم… وهذه قصصهم', en: 'Thousands of Patients Regained Their Sight… These Are Their Stories' },
+  'testimonials.subtitle': { ar: 'نفخر بثقة آلاف العائلات المصريّة. كل شهادة هي قصة أمل استعاد رؤيته', en: 'We are proud of the trust of thousands of Egyptian families. Every testimonial is a story of hope that regained its vision' },
+  'testimonials.rating': { ar: '٤.٩ / ٥', en: '4.9 / 5' },
+  'testimonials.ratingLabel': { ar: 'متوسط التقييم', en: 'Average Rating' },
+  'testimonials.google': { ar: '+٥٠٠ تقييم على Google', en: '+500 Google Reviews' },
+
+  // Booking
+  'booking.badge': { ar: 'احجز موعدك', en: 'Book Your Appointment' },
+  'booking.headline': { ar: 'ابدأ رحلتك نحو رؤية أوضح اليوم', en: 'Start Your Journey to Clearer Vision Today' },
+  'booking.subtitle': { ar: 'احجز استشارتك الأولى الآن. فريقنا جاهز لمساعدتك في اختيار العلاج المناسب. المواعيد متاحة هذا الأسبوع!', en: 'Book your first consultation now. Our team is ready to help you choose the right treatment. Appointments available this week!' },
+  'booking.feature1.title': { ar: 'مواعيد مرنة', en: 'Flexible Appointments' },
+  'booking.feature1.desc': { ar: 'صباحاً ومساءً، ويوم السبت أيضاً', en: 'Morning and evening, including Saturdays' },
+  'booking.feature2.title': { ar: 'استشارة مجانية', en: 'Free Consultation' },
+  'booking.feature2.desc': { ar: 'تشخيص أولي مجاني لتحديد العلاج', en: 'Free initial diagnosis to determine treatment' },
+  'booking.feature3.title': { ar: 'ضمان الجودة', en: 'Quality Guarantee' },
+  'booking.feature3.desc': { ar: 'أحدث الأجهزة وأعلى معايير التعقيم', en: 'Latest equipment and highest sterilization standards' },
+  'booking.feature4.title': { ar: 'متابعة بعد العلاج', en: 'Post-Treatment Follow-up' },
+  'booking.feature4.desc': { ar: 'فريق متخصص لمتابعة حالتك بعد العملية', en: 'Specialized team to follow up on your case after surgery' },
+  'booking.orContact': { ar: 'أو تواصل معنا مباشرة:', en: 'Or contact us directly:' },
+  'booking.whatsapp': { ar: 'واتساب', en: 'WhatsApp' },
+  'booking.form.title': { ar: 'استمارة الحجز', en: 'Booking Form' },
+  'booking.form.subtitle': { ar: 'املأ البيانات وسنقوم بالتواصل معك خلال ساعات', en: 'Fill in your details and we\'ll contact you within hours' },
+  'booking.form.name': { ar: 'الاسم بالكامل', en: 'Full Name' },
+  'booking.form.namePlaceholder': { ar: 'محمد أحمد', en: 'Mohamed Ahmed' },
+  'booking.form.phone': { ar: 'رقم الهاتف', en: 'Phone Number' },
+  'booking.form.phonePlaceholder': { ar: '٠١٠٠١٢٣٤٥٦٧٨', en: '0100 123 4567' },
+  'booking.form.service': { ar: 'اختر الخدمة', en: 'Select Service' },
+  'booking.form.date': { ar: 'التاريخ المفضل', en: 'Preferred Date' },
+  'booking.form.time': { ar: 'الوقت المفضل', en: 'Preferred Time' },
+  'booking.form.time.morning': { ar: 'الصباح (٩ ص - ١٢ ظ)', en: 'Morning (9AM - 12PM)' },
+  'booking.form.time.afternoon': { ar: 'الظهر (١٢ ظ - ٣ م)', en: 'Afternoon (12PM - 3PM)' },
+  'booking.form.time.evening': { ar: 'المساء (٣ م - ٧ م)', en: 'Evening (3PM - 7PM)' },
+  'booking.form.notes': { ar: 'ملاحظات إضافية', en: 'Additional Notes' },
+  'booking.form.notesPlaceholder': { ar: 'اشرح أعراضك أو اطرح أي سؤال…', en: 'Describe your symptoms or ask any question…' },
+  'booking.form.submit': { ar: 'احجز موعدي الآن', en: 'Book My Appointment' },
+  'booking.form.loading': { ar: 'جاري الحجز…', en: 'Booking…' },
+  'booking.form.success': { ar: 'تم الحجز بنجاح!', en: 'Booked Successfully!' },
+  'booking.form.privacy': { ar: 'بياناتك آمنة ومشفرة. نحترم خصوصيتك تماماً.', en: 'Your data is secure and encrypted. We fully respect your privacy.' },
+  'booking.phone': { ar: '٠١٠٠١٢٣٤٥٦٧٨', en: '+20 100 123 4567' },
+
+  // Footer
+  'footer.tagline': { ar: 'أفضل رعاية لعيونك', en: 'The Best Care for Your Eyes' },
+  'footer.quickLinks': { ar: 'روابط سريعة', en: 'Quick Links' },
+  'footer.services': { ar: 'خدماتنا', en: 'Our Services' },
+  'footer.contact': { ar: 'تواصل معنا', en: 'Contact Us' },
+  'footer.address': { ar: '٢٥ شارع الجمهورية، القاهرة', en: '25 El-Gomhoreya St., Cairo' },
+  'footer.email': { ar: 'info@dramedeye.com', en: 'info@dramedeye.com' },
+  'footer.whatsapp': { ar: 'تواصل واتساب', en: 'WhatsApp Us' },
+  'footer.copyright': { ar: '© ٢٠٢٥ د. أحمد عبدالله مهلهل. جميع الحقوق محفوظة.', en: '© 2025 Dr. Ahmed Abdullah Muhlhal. All rights reserved.' },
+  'footer.privacy': { ar: 'سياسة الخصوصية', en: 'Privacy Policy' },
+  'footer.terms': { ar: 'شروط الاستخدام', en: 'Terms of Use' },
+
+  // Blog
+  'blog.breadcrumb': { ar: 'الرئيسية / المدونة', en: 'Home / Blog' },
+  'blog.title': { ar: 'المدونة الطبية', en: 'Medical Blog' },
+  'blog.subtitle': { ar: 'مقالات طبية موثوقة عن صحة العيون. اقرأ، تعلم، واهتم بعيونك.', en: 'Trusted medical articles about eye health. Read, learn, and take care of your eyes.' },
+  'blog.search': { ar: 'ابحث في المقالات…', en: 'Search articles…' },
+  'blog.category.all': { ar: 'جميع التصنيفات', en: 'All Categories' },
+  'blog.category.surgery': { ar: 'جراحة العيون', en: 'Eye Surgery' },
+  'blog.category.diseases': { ar: 'أمراض العيون', en: 'Eye Diseases' },
+  'blog.category.tips': { ar: 'نصائح صحية', en: 'Health Tips' },
+  'blog.category.stories': { ar: 'تجارب المرضى', en: 'Patient Stories' },
+  'blog.tab.all': { ar: 'الكل', en: 'All' },
+  'blog.tab.surgery': { ar: 'جراحة العيون', en: 'Eye Surgery' },
+  'blog.tab.diseases': { ar: 'أمراض العيون', en: 'Eye Diseases' },
+  'blog.tab.tips': { ar: 'نصائح صحية', en: 'Health Tips' },
+  'blog.tab.stories': { ar: 'تجارب المرضى', en: 'Patient Stories' },
+  'blog.read': { ar: 'اقرأ المقال', en: 'Read Article' },
+  'blog.min': { ar: 'دق', en: 'min' },
+  'blog.loadMore': { ar: 'تحميل المزيد', en: 'Load More' },
+  'blog.newsletter.title': { ar: 'اشترك في نشرتنا الطبية', en: 'Subscribe to Our Medical Newsletter' },
+  'blog.newsletter.subtitle': { ar: 'نصائح صحية، أحدث العلاجات، وعروض حصرية مباشرة على بريدك', en: 'Health tips, latest treatments, and exclusive offers directly to your inbox' },
+  'blog.newsletter.placeholder': { ar: 'بريدك الإلكتروني', en: 'Your email' },
+  'blog.newsletter.submit': { ar: 'اشترك', en: 'Subscribe' },
+
+  // Article
+  'article.writtenBy': { ar: 'كُتب بواسطة:', en: 'Written by:' },
+  'article.minRead': { ar: 'دقائق قراءة', en: 'min read' },
+  'article.related': { ar: 'مقالات ذات صلة', en: 'Related Articles' },
+  'article.share': { ar: 'شارك المقال:', en: 'Share:' },
+  'article.toc': { ar: 'محتويات المقال', en: 'Table of Contents' },
+  'article.sidebar.cta': { ar: 'هل تحتاج استشارة؟', en: 'Need a Consultation?' },
+  'article.sidebar.ctaDesc': { ar: 'احجز موعدك الآن واحصل على تشخيص مجاني', en: 'Book now and get a free diagnosis' },
+  'article.sidebar.book': { ar: 'احجز موعد', en: 'Book Now' },
+
+  // Floating buttons
+  'float.emergency': { ar: 'اتصل الآن', en: 'Call Now' },
+  'float.whatsapp': { ar: 'استشارة واتساب', en: 'WhatsApp Consult' },
+
+  // Service options
+  'service.lasik': { ar: 'جراحة الليزك', en: 'LASIK Surgery' },
+  'service.cataract': { ar: 'المياه البيضاء', en: 'Cataract Surgery' },
+  'service.retina': { ar: 'علاج الشبكية', en: 'Retina Treatment' },
+  'service.glaucoma': { ar: 'الجلوكوما', en: 'Glaucoma' },
+  'service.pediatric': { ar: 'طب عيون الأطفال', en: 'Pediatric Ophthalmology' },
+  'service.dryeye': { ar: 'جفاف العين', en: 'Dry Eye Treatment' },
+  'service.exam': { ar: 'فحص عيون شامل', en: 'Full Eye Exam' },
+  'service.consult': { ar: 'استشارة عامة', en: 'General Consultation' },
+
+  // Validation
+  'validation.required': { ar: 'هذا الحقل مطلوب', en: 'This field is required' },
+  'validation.phone': { ar: 'رقم هاتف غير صحيح', en: 'Invalid phone number' },
+};
+
+export function t(key: string, lang: 'ar' | 'en'): string {
+  return translations[key]?.[lang] || key;
+}

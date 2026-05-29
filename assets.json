@@ -1,0 +1,132 @@
+{
+  "assets": [
+    {
+      "id": "doctor-portrait",
+      "type": "image",
+      "method": "generate",
+      "filename": "doctor-portrait.png",
+      "ratio": "2:3",
+      "description": "Professional warm-toned photograph of a middle-aged Egyptian male doctor (Dr. Ahmed) in a white medical coat, warm confident smile, standing in a modern ophthalmology examination room. Premium clinic setting with soft natural lighting. High-end medical equipment (slit lamp, autorefractor) subtly visible in soft-focus background. Trustworthy, approachable, and professional. Warm color grading with slight golden highlights."
+    },
+    {
+      "id": "avatar-1",
+      "type": "image",
+      "method": "generate",
+      "filename": "avatar-1.png",
+      "ratio": "1:1",
+      "description": "Professional headshot portrait of an Egyptian man in his early 30s, friendly warm smile, clean-shaven, short dark hair, wearing a casual navy blue shirt. Soft studio lighting, neutral warm background. Approachable, healthy appearance. Square crop portrait photo."
+    },
+    {
+      "id": "avatar-2",
+      "type": "image",
+      "method": "generate",
+      "filename": "avatar-2.png",
+      "ratio": "1:1",
+      "description": "Professional headshot portrait of a young Egyptian woman in her mid-20s, warm genuine smile, dark hair with soft waves, wearing a light-colored blouse. Soft studio lighting, neutral warm background. Warm and friendly expression. Square crop portrait photo."
+    },
+    {
+      "id": "avatar-3",
+      "type": "image",
+      "method": "generate",
+      "filename": "avatar-3.png",
+      "ratio": "1:1",
+      "description": "Professional headshot portrait of an Egyptian woman in her late 30s, professional confident look, dark hair pulled back, wearing elegant earrings and a dark blazer. Soft studio lighting, neutral warm background. Elegant and trustworthy. Square crop portrait photo."
+    },
+    {
+      "id": "avatar-4",
+      "type": "image",
+      "method": "generate",
+      "filename": "avatar-4.png",
+      "ratio": "1:1",
+      "description": "Professional headshot portrait of an Egyptian man in his mid-50s, dignified warm appearance, short gray-flecked hair, neatly trimmed beard, wearing a light dress shirt. Soft studio lighting, neutral warm background. Wise and respectable expression. Square crop portrait photo."
+    },
+    {
+      "id": "avatar-5",
+      "type": "image",
+      "method": "generate",
+      "filename": "avatar-5.png",
+      "ratio": "1:1",
+      "description": "Professional headshot portrait of a young Egyptian woman in her late 20s, confident bright smile, long dark hair, wearing a casual top. Soft studio lighting, neutral warm background. Youthful and vibrant. Square crop portrait photo."
+    },
+    {
+      "id": "avatar-6",
+      "type": "image",
+      "method": "generate",
+      "filename": "avatar-6.png",
+      "ratio": "1:1",
+      "description": "Professional headshot portrait of an Egyptian man in his early 40s, friendly casual appearance, short dark hair, warm smile, wearing a casual polo shirt. Soft studio lighting, neutral warm background. Approachable and friendly. Square crop portrait photo."
+    },
+    {
+      "id": "avatar-7",
+      "type": "image",
+      "method": "generate",
+      "filename": "avatar-7.png",
+      "ratio": "1:1",
+      "description": "Professional headshot portrait of an Egyptian woman in her early 40s, elegant graceful appearance, shoulder-length dark hair, subtle makeup, wearing a soft-colored blouse. Soft studio lighting, neutral warm background. Elegant and warm. Square crop portrait photo."
+    },
+    {
+      "id": "avatar-8",
+      "type": "image",
+      "method": "generate",
+      "filename": "avatar-8.png",
+      "ratio": "1:1",
+      "description": "Professional headshot portrait of an Egyptian man in his early 60s, wise gentle expression, silver-gray hair, neatly groomed, wearing a collared shirt. Soft studio lighting, neutral warm background. Dignified and kind. Square crop portrait photo."
+    },
+    {
+      "id": "blog-lasik",
+      "type": "image",
+      "method": "generate",
+      "filename": "blog-lasik.jpg",
+      "ratio": "3:2",
+      "description": "Close-up of advanced laser eye surgery technology, femtosecond laser machine in a modern premium clinic. Blue-toned medical lighting, precise laser beam visible. Clean sterile environment. Professional medical photography style with cool blue and white tones. High-tech ophthalmology equipment."
+    },
+    {
+      "id": "blog-cataract",
+      "type": "image",
+      "method": "generate",
+      "filename": "blog-cataract.jpg",
+      "ratio": "3:2",
+      "description": "Medical illustration style close-up of a human eye showing a cloudy cataract lens on one side contrasted with a clear lens on the other side. Split comparison visual. Blue medical background tones, clinical precision. Educational medical photography style."
+    },
+    {
+      "id": "blog-mistakes",
+      "type": "image",
+      "method": "generate",
+      "filename": "blog-mistakes.jpg",
+      "ratio": "3:2",
+      "description": "A person sitting in front of multiple glowing computer and phone screens in a dark room, rubbing their tired eyes. Blue light from screens illuminates the face. Modern lifestyle concept. Slightly dramatic lighting with warm and cool contrast. Represents digital eye strain."
+    },
+    {
+      "id": "blog-diabetic",
+      "type": "image",
+      "method": "generate",
+      "filename": "blog-diabetic.jpg",
+      "ratio": "3:2",
+      "description": "Close-up medical photograph of a human retina as seen through an ophthalmoscope, showing retinal blood vessels in detail. Dark background with illuminated red-orange vascular network. Medical diagnostic imaging aesthetic. High contrast, clinical photography."
+    },
+    {
+      "id": "blog-lens",
+      "type": "image",
+      "method": "generate",
+      "filename": "blog-lens.jpg",
+      "ratio": "3:2",
+      "description": "Macro close-up of a blue human eye with a contact lens being placed on it. Sharp macro photography showing incredible iris detail with blue and green patterns. Professional medical photography with clean blue tones. Crystal clear focus on the eye."
+    },
+    {
+      "id": "blog-story",
+      "type": "image",
+      "method": "generate",
+      "filename": "blog-story.jpg",
+      "ratio": "3:2",
+      "description": "Happy young Egyptian woman outdoors in natural sunlight, smiling broadly, no glasses, looking at a beautiful landscape with clear confidence. Bright sunny day, warm golden hour lighting. Represents freedom from glasses after LASIK surgery. Joyful and liberating mood."
+    },
+    {
+      "id": "blog-featured",
+      "type": "image",
+      "method": "generate",
+      "filename": "blog-featured.jpg",
+      "ratio": "16:9",
+      "description": "Wide panoramic shot of a futuristic premium eye surgery operating room. Advanced femtosecond laser system, digital diagnostic displays, pristine white and blue lighting. Ultra-modern medical facility with cutting-edge technology. Cinematic wide-angle composition, cool blue-white premium lighting. Professional medical facility photography."
+    }
+  ]
+}
