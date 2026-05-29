@@ -1,4 +1,6 @@
+import { Link } from 'react-router-dom';
 import { useLanguage } from '@/context/LanguageContext';
+import { t } from '@/data/translations';
 import type { ServiceData } from '@/types';
 import { ScanEye, Droplets, Eye, Activity, Baby, Droplet, Search, Hexagon, ArrowLeft, ArrowRight, Check } from 'lucide-react';
 
@@ -17,7 +19,7 @@ export default function ServiceCard({ service }: Props) {
   const isRtl = dir === 'rtl';
 
   return (
-    <div className="group bg-[#F7F9FC] border border-divider rounded-2xl p-8 cursor-pointer transition-all duration-350 hover:-translate-y-1.5 hover:shadow-card-hover hover:border-medical-blue/20">
+    <Link to={`/services/${service.id}`} className="group block bg-[#F7F9FC] border border-divider rounded-2xl p-8 cursor-pointer transition-all duration-350 hover:-translate-y-1.5 hover:shadow-card-hover hover:border-medical-blue/20">
       <div className="w-14 h-14 rounded-full bg-ice-blue flex items-center justify-center text-medical-blue mb-4 transition-all duration-300 group-hover:bg-medical-blue group-hover:text-white">
         {iconMap[service.icon]}
       </div>
@@ -35,10 +37,10 @@ export default function ServiceCard({ service }: Props) {
           </li>
         ))}
       </ul>
-      <button className="flex items-center gap-2 text-medical-blue text-sm font-semibold hover:underline">
-        <span>Learn more</span>
+      <div className="flex items-center gap-2 text-medical-blue text-sm font-semibold group-hover:underline">
+        <span>{lang === 'ar' ? 'اعرف المزيد' : 'Learn more'}</span>
         {isRtl ? <ArrowLeft size={16} /> : <ArrowRight size={16} />}
-      </button>
-    </div>
+      </div>
+    </Link>
   );
 }

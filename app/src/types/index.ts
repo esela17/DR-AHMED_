@@ -7,6 +7,7 @@ export interface ServiceData {
   descEn: string;
   benefitsAr: string[];
   benefitsEn: string[];
+  body?: import('./index').ArticleBodySection[];
 }
 
 export interface TestimonialData {

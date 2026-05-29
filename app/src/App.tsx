@@ -8,6 +8,7 @@ import ScrollProgress from '@/components/layout/ScrollProgress';
 import HomePage from '@/pages/HomePage';
 import BlogListPage from '@/pages/BlogListPage';
 import ArticlePage from '@/pages/ArticlePage';
+import ServicePage from '@/pages/ServicePage';
 import NotFoundPage from '@/pages/NotFoundPage';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
             <Route path="/" element={<HomePage />} />
             <Route path="/blog" element={<BlogListPage />} />
             <Route path="/blog/:slug" element={<ArticlePage />} />
+            <Route path="/services/:id" element={<ServicePage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
           <Footer />

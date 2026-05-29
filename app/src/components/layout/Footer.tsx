@@ -121,7 +121,9 @@ export default function Footer() {
 
         {/* Bottom Bar */}
         <div className="mt-12 pt-6 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-light-slate text-xs">{t('footer.copyright', lang)}</p>
+          <a href="https://cureztyx.xyz" target="_blank" rel="noopener noreferrer" className="text-light-slate text-xs hover:text-white transition-colors">
+            {t('footer.copyright', lang)}
+          </a>
           <div className="flex gap-6">
             <a href="#" className="text-light-slate text-xs hover:text-white transition-colors">{t('footer.privacy', lang)}</a>
             <a href="#" className="text-light-slate text-xs hover:text-white transition-colors">{t('footer.terms', lang)}</a>

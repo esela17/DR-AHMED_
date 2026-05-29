@@ -111,7 +111,7 @@ const translations: Record<string, TranslationValue> = {
   'footer.address': { ar: '٢٥ شارع الجمهورية، القاهرة', en: '25 El-Gomhoreya St., Cairo' },
   'footer.email': { ar: 'info@dramedeye.com', en: 'info@dramedeye.com' },
   'footer.whatsapp': { ar: 'تواصل واتساب', en: 'WhatsApp Us' },
-  'footer.copyright': { ar: '© ٢٠٢٥ د. أحمد عبدالله مهلهل. جميع الحقوق محفوظة.', en: '© 2025 Dr. Ahmed Abdullah Muhlhal. All rights reserved.' },
+  'footer.copyright': { ar: 'جميع الحقوق محفوظة ل شركة زتكس للتكنولوجيا والمعلومات', en: 'All rights reserved to ZTYX for information technology' },
   'footer.privacy': { ar: 'سياسة الخصوصية', en: 'Privacy Policy' },
   'footer.terms': { ar: 'شروط الاستخدام', en: 'Terms of Use' },
 
