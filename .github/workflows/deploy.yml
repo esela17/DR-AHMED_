@@ -31,7 +31,7 @@ jobs:
           cache-dependency-path: app/package-lock.json
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
         working-directory: ./app
 
       - name: Build project
@@ -39,6 +39,9 @@ jobs:
         working-directory: ./app
         env:
           NODE_ENV: production
+
+      - name: Debug Output
+        run: ls -la ./app/dist
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
