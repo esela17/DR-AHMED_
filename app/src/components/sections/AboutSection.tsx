@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { t } from '@/data/translations';
+import { getAssetUrl } from '@/lib/utils';
 import SectionBadge from '@/components/shared/SectionBadge';
 import { GraduationCap, Globe, Heart } from 'lucide-react';
 import gsap from 'gsap';
@@ -40,7 +41,7 @@ export default function AboutSection() {
           {/* Portrait */}
           <div className="about-portrait relative">
             <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-[0_20px_60px_rgba(7,26,43,0.12)]">
-              <img src="/images/doctor-portrait.png" alt={lang === 'ar' ? 'د. أحمد عبدالله مهلهل' : 'Dr. Ahmed Abdullah Muhlhal'} className="w-full h-full object-cover" loading="lazy" />
+              <img src={getAssetUrl('/images/doctor-portrait.png')} alt={lang === 'ar' ? 'د. أحمد عبدالله مهلهل' : 'Dr. Ahmed Abdullah Muhlhal'} className="w-full h-full object-cover" loading="lazy" />
             </div>
             {/* Credential Card */}
             <div className={`about-credcard absolute -bottom-5 ${isRtl ? '-left-5' : '-right-5'} glassmorphism-light p-5 max-w-[260px]`}>

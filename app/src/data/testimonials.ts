@@ -1,5 +1,5 @@
 import type { TestimonialData } from '@/types';
-
+import { getAssetUrl } from '@/lib/utils';
 export const testimonials: TestimonialData[] = [
   {
     id: 1,
@@ -11,7 +11,7 @@ export const testimonials: TestimonialData[] = [
     age: '٣٢ سنة',
     caseAr: 'جراحة ليزك',
     caseEn: 'LASIK Surgery',
-    avatar: '/images/avatars/avatar-1.png',
+    avatar: getAssetUrl('/images/avatars/avatar-1.png'),
   },
   {
     id: 2,
@@ -23,7 +23,7 @@ export const testimonials: TestimonialData[] = [
     age: 'ابنة مريضة',
     caseAr: 'عملية مياه بيضاء',
     caseEn: 'Cataract Surgery',
-    avatar: '/images/avatars/avatar-2.png',
+    avatar: getAssetUrl('/images/avatars/avatar-2.png'),
   },
   {
     id: 3,
@@ -35,7 +35,7 @@ export const testimonials: TestimonialData[] = [
     age: '٣٨ سنة',
     caseAr: 'طب عيون أطفال',
     caseEn: 'Pediatric Ophthalmology',
-    avatar: '/images/avatars/avatar-3.png',
+    avatar: getAssetUrl('/images/avatars/avatar-3.png'),
   },
   {
     id: 4,
@@ -47,7 +47,7 @@ export const testimonials: TestimonialData[] = [
     age: '٥٥ سنة',
     caseAr: 'علاج الشبكية',
     caseEn: 'Retina Treatment',
-    avatar: '/images/avatars/avatar-4.png',
+    avatar: getAssetUrl('/images/avatars/avatar-4.png'),
   },
   {
     id: 5,
@@ -59,7 +59,7 @@ export const testimonials: TestimonialData[] = [
     age: '٢٨ سنة',
     caseAr: 'جراحة ليزك',
     caseEn: 'LASIK Surgery',
-    avatar: '/images/avatars/avatar-5.png',
+    avatar: getAssetUrl('/images/avatars/avatar-5.png'),
   },
   {
     id: 6,
@@ -71,7 +71,7 @@ export const testimonials: TestimonialData[] = [
     age: '٤٥ سنة',
     caseAr: 'علاج الجلوكوما',
     caseEn: 'Glaucoma Treatment',
-    avatar: '/images/avatars/avatar-6.png',
+    avatar: getAssetUrl('/images/avatars/avatar-6.png'),
   },
   {
     id: 7,
@@ -83,7 +83,7 @@ export const testimonials: TestimonialData[] = [
     age: '٤٠ سنة',
     caseAr: 'علاج جفاف العين',
     caseEn: 'Dry Eye Treatment',
-    avatar: '/images/avatars/avatar-7.png',
+    avatar: getAssetUrl('/images/avatars/avatar-7.png'),
   },
   {
     id: 8,
@@ -95,6 +95,6 @@ export const testimonials: TestimonialData[] = [
     age: '٦٢ سنة',
     caseAr: 'عملية مياه بيضاء',
     caseEn: 'Cataract Surgery',
-    avatar: '/images/avatars/avatar-8.png',
+    avatar: getAssetUrl('/images/avatars/avatar-8.png'),
   },
 ];

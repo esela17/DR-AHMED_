@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useLanguage } from '@/context/LanguageContext';
 import { t } from '@/data/translations';
+import { getAssetUrl } from '@/lib/utils';
 import { getArticleBySlug, getRelatedArticles } from '@/data/articles';
 import BlogCard from '@/components/shared/BlogCard';
 import { Clock, Calendar, Facebook, Twitter, Link2 } from 'lucide-react';
@@ -125,7 +126,7 @@ export default function ArticlePage() {
               </h1>
               <div className="flex flex-wrap items-center gap-4 text-slate-custom text-xs">
                 <span className="flex items-center gap-2">
-                  <img src="/images/doctor-portrait.png" alt={lang === 'ar' ? 'د. أحمد عبدالله مهلهل' : 'Dr. Ahmed Abdullah Muhlhal'} className="w-8 h-8 rounded-full object-cover" loading="lazy" />
+                  <img src={getAssetUrl('/images/doctor-portrait.png')} alt={lang === 'ar' ? 'د. أحمد عبدالله مهلهل' : 'Dr. Ahmed Abdullah Muhlhal'} className="w-8 h-8 rounded-full object-cover" loading="lazy" />
                   <span className="font-semibold text-deep-navy">{lang === 'ar' ? 'د. أحمد عبدالله مهلهل' : 'Dr. Ahmed Abdullah Muhlhal'}</span>
                 </span>
                 <span className="flex items-center gap-1"><Calendar size={14} /> {article.date}</span>
@@ -153,7 +154,7 @@ export default function ArticlePage() {
 
             {/* Author Bio */}
             <div className="flex items-start gap-5 bg-[#F7F9FC] rounded-xl p-6 mt-8">
-              <img src="/images/doctor-portrait.png" alt={lang === 'ar' ? 'د. أحمد عبدالله مهلهل' : 'Dr. Ahmed Abdullah Muhlhal'} className="w-14 h-14 rounded-full object-cover shrink-0" loading="lazy" />
+              <img src={getAssetUrl('/images/doctor-portrait.png')} alt={lang === 'ar' ? 'د. أحمد عبدالله مهلهل' : 'Dr. Ahmed Abdullah Muhlhal'} className="w-14 h-14 rounded-full object-cover shrink-0" loading="lazy" />
               <div>
                 <p className="text-slate-custom text-xs mb-1">{t('article.writtenBy', lang)}</p>
                 <h4 className="text-deep-navy font-semibold text-lg mb-1">{lang === 'ar' ? 'د. أحمد عبدالله مهلهل' : 'Dr. Ahmed Abdullah Muhlhal'}</h4>
