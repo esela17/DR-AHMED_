@@ -13,7 +13,7 @@ import NotFoundPage from '@/pages/NotFoundPage';
 function App() {
   return (
     <LanguageProvider>
-      <BrowserRouter>
+      <BrowserRouter basename={import.meta.env.BASE_URL}>
         <div className="relative">
           <Navigation />
           <ScrollProgress />
