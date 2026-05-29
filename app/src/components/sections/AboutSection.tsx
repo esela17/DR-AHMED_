@@ -1,8 +1,9 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { t } from '@/data/translations';
 import { getAssetUrl } from '@/lib/utils';
 import SectionBadge from '@/components/shared/SectionBadge';
+import { GraduationCap, Award, Activity, Check, ShieldCheck } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
@@ -12,21 +13,24 @@ export default function AboutSection() {
   const { lang, dir } = useLanguage();
   const sectionRef = useRef<HTMLDivElement>(null);
   const isRtl = dir === 'rtl';
-  const [activeTab, setActiveTab] = useState<'profile' | 'edu' | 'exp' | 'tech'>('profile');
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      const tl = gsap.timeline({
-        scrollTrigger: { trigger: sectionRef.current, start: 'top 70%', toggleActions: 'play none none none' },
+      // Row 1 entry animation
+      gsap.fromTo('.about-portrait', { opacity: 0, x: isRtl ? 40 : -40 }, {
+        opacity: 1, x: 0, duration: 1, ease: 'power3.out',
+        scrollTrigger: { trigger: '.about-row-1', start: 'top 75%' },
       });
-      tl.fromTo('.about-badge', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5 })
-        .fromTo('.about-headline', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }, '-=0.3')
-        .fromTo('.about-subtitle', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.7 }, '-=0.5')
-        .fromTo('.about-portrait', { opacity: 0, x: isRtl ? 40 : -40 }, { opacity: 1, x: 0, duration: 1, ease: 'power3.out' }, '-=0.8')
-        .fromTo('.about-credcard', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6 }, '-=0.5')
-        .fromTo('.about-tabs-container', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6 }, '-=0.4')
-        .fromTo('.about-vision', { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.6 }, '-=0.3')
-        .fromTo('.about-cta', { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.5 }, '-=0.3');
+      gsap.fromTo('.about-intro-text > *', { opacity: 0, y: 30 }, {
+        opacity: 1, y: 0, duration: 0.8, stagger: 0.12, ease: 'power3.out',
+        scrollTrigger: { trigger: '.about-row-1', start: 'top 75%' },
+      });
+
+      // Row 2 cards entry animation
+      gsap.fromTo('.about-card', { opacity: 0, y: 40, scale: 0.96 }, {
+        opacity: 1, y: 0, scale: 1, duration: 0.8, stagger: 0.2, ease: 'power3.out',
+        scrollTrigger: { trigger: '.about-row-2', start: 'top 80%' },
+      });
     }, sectionRef);
     return () => ctx.revert();
   }, [isRtl]);
@@ -34,161 +38,196 @@ export default function AboutSection() {
   const fontClass = lang === 'ar' ? 'font-cairo' : 'font-outfit';
 
   return (
-    <section id="about" ref={sectionRef} className="bg-[#F7F9FC] py-20 lg:py-32">
-      <div className="content-container">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Portrait */}
-          <div className="about-portrait relative">
-            <div className="aspect-[3/4] rounded-2xl overflow-hidden shadow-[0_20px_60px_rgba(7,26,43,0.12)]">
-              <img src={getAssetUrl('/images/doctor-portrait.png')} alt={lang === 'ar' ? 'أ.د. أحمد عبدالله مهلهل' : 'Prof. Dr. Ahmed Abdullah Mohelhel'} className="w-full h-full object-cover" loading="lazy" />
+    <section id="about" ref={sectionRef} className="bg-[#F8FAFC] py-20 lg:py-32 relative overflow-hidden">
+      {/* Visual background decorations */}
+      <div className="absolute top-1/4 left-0 w-[450px] h-[450px] rounded-full bg-medical-blue/[0.02] blur-3xl pointer-events-none" />
+      <div className="absolute bottom-1/4 right-0 w-[450px] h-[450px] rounded-full bg-warm-gold/[0.02] blur-3xl pointer-events-none" />
+
+      <div className="content-container relative z-10">
+        {/* Row 1: Portrait & Biography */}
+        <div className="about-row-1 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20">
+          {/* Portrait Image Column */}
+          <div className="about-portrait relative max-w-md lg:max-w-none mx-auto w-full">
+            <div className="aspect-[3/4] rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(7,26,43,0.08)] border border-divider/40 bg-white">
+              <img 
+                src={getAssetUrl('/images/doctor-portrait.png')} 
+                alt={lang === 'ar' ? 'أ.د. أحمد عبدالله مهلهل' : 'Prof. Dr. Ahmed Abdullah Mohelhel'} 
+                className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" 
+                loading="lazy" 
+              />
             </div>
-            {/* Credential Card */}
-            <div className={`about-credcard absolute -bottom-5 ${isRtl ? '-left-5' : '-right-5'} glassmorphism-light p-5 max-w-[260px]`}>
-              <p className="text-deep-navy text-sm font-semibold mb-0.5">{t('about.card.degree', lang)}</p>
-              <p className="text-slate-custom text-xs mb-3">{t('about.card.university', lang)}</p>
-              <p className="text-deep-navy text-sm font-semibold mb-0.5">{t('about.card.fellowship', lang)}</p>
-              <p className="text-slate-custom text-xs">{t('about.card.board', lang)}</p>
+            {/* Floating Credentials Card */}
+            <div className={`about-credcard absolute -bottom-5 ${isRtl ? '-left-4' : '-right-4'} bg-white/90 backdrop-blur-md p-5 rounded-2xl shadow-[0_12px_30px_rgba(7,26,43,0.08)] border border-divider/60 max-w-[280px]`}>
+              <div className="flex items-start gap-3">
+                <div className="w-10 h-10 rounded-xl bg-medical-blue/10 flex items-center justify-center text-medical-blue shrink-0">
+                  <GraduationCap size={20} />
+                </div>
+                <div>
+                  <p className="text-deep-navy text-sm font-bold mb-0.5 leading-snug">
+                    {lang === 'ar' ? 'دكتوراة طب العين وجراحتها' : 'MD in Ophthalmology'}
+                  </p>
+                  <p className="text-slate-custom text-[11px] font-semibold uppercase tracking-wider mb-2">
+                    {lang === 'ar' ? 'جامعة القاهرة' : 'Cairo University'}
+                  </p>
+                  <p className="text-[#0D1D2D] text-xs font-semibold">
+                    {lang === 'ar' ? 'استشاري المياه البيضاء والشبكية والليزك' : 'Consultant in Retina, Cataract & LASIK'}
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Content */}
-          <div>
-            <div className="about-badge">
+          {/* Intro Biography Column */}
+          <div className="about-intro-text flex flex-col justify-center">
+            <div className="mb-4">
               <SectionBadge label={t('about.badge', lang)} />
             </div>
-            <h2 className={`about-headline ${fontClass} text-2xl md:text-4xl lg:text-[44px] font-bold text-deep-navy leading-tight mb-4`}>
+            <h2 className={`about-headline ${fontClass} text-3xl md:text-4xl lg:text-[44px] font-bold text-deep-navy leading-tight mb-5`}>
               {t('about.headline', lang)}
             </h2>
-            <p className="about-subtitle text-xl text-slate-custom font-normal mb-6">
+            <p className="about-subtitle text-lg md:text-xl text-medical-blue font-semibold mb-6">
               {t('about.subtitle', lang)}
             </p>
-
-            {/* Interactive Tabs Container */}
-            <div className="about-tabs-container bg-white border border-divider/60 rounded-2xl p-6 shadow-sm mb-8">
-              {/* Tab Header Selectors */}
-              <div className="flex border-b border-divider mb-6 overflow-x-auto scrollbar-hide gap-1.5 pb-1">
-                {[
-                  { id: 'profile', labelAr: 'النبذة الشخصية', labelEn: 'Summary' },
-                  { id: 'edu', labelAr: 'المؤهلات والشهادات', labelEn: 'Qualifications' },
-                  { id: 'exp', labelAr: 'المناصب والخبرات', labelEn: 'Experience' },
-                  { id: 'tech', labelAr: 'الأجهزة والتقنيات', labelEn: 'Clinical Tech' }
-                ].map(tab => (
-                  <button
-                    key={tab.id}
-                    onClick={() => setActiveTab(tab.id as any)}
-                    className={`px-3 py-2 text-xs md:text-sm font-semibold border-b-2 whitespace-nowrap transition-all duration-300 ${
-                      activeTab === tab.id
-                        ? 'border-medical-blue text-medical-blue font-bold'
-                        : 'border-transparent text-slate-custom hover:text-deep-navy'
-                    }`}
-                  >
-                    {lang === 'ar' ? tab.labelAr : tab.labelEn}
-                  </button>
-                ))}
-              </div>
-
-              {/* Tab Display Panel */}
-              <div className="min-h-[200px]">
-                {activeTab === 'profile' && (
-                  <div className="space-y-4">
-                    <p className="text-slate-custom text-sm md:text-base leading-relaxed">
-                      {lang === 'ar'
-                        ? 'الأستاذ الدكتور أحمد عبدالله مهلهل هو استشاري طب وجراحة العيون ومتخصّص في جراحات الشبكية والجسم الزجاجي وتصحيح الإبصار. يشغل منصب أستاذ مساعد في كلية الطب – قصر العيني بجامعة القاهرة، وحاصل على درجة الدكتوراه في طب العيون وجراحتها.'
-                        : 'Prof. Dr. Ahmed Abdullah Mohelhel is a consultant of ophthalmology specializing in vitreoretinal surgery and vision correction. He serves as an Assistant Professor at Kasr Al-Ainy Faculty of Medicine, Cairo University, and holds an MD in Ophthalmology.'}
-                    </p>
-                    <p className="text-slate-custom text-sm md:text-base leading-relaxed">
-                      {lang === 'ar'
-                        ? 'يمتلك د. أحمد مهلهل خبرة طويلة في علاج أمراض العيون وجراحات المياه البيضاء والشبكية والليزك. وهو عضو بالأكاديمية الأمريكية لطب العيون وجمعية الشبكية الأوروبية، ويعمل بمركز نور العيون وعياداته بالدقي والفيوم.'
-                        : 'Dr. Ahmed has extensive experience in managing eye conditions, cataract extraction, retinal surgeries, and LASIK. He is an active member of the American Academy of Ophthalmology and the European Society of Retina Specialists.'}
-                    </p>
-                  </div>
-                )}
-
-                {activeTab === 'edu' && (
-                  <ul className="space-y-3">
-                    {[
-                      { ar: 'دكتوراه في طب وجراحة العيون – كلية الطب قصر العيني (جامعة القاهرة)', en: 'MD in Ophthalmology – Kasr Al-Ainy Faculty of Medicine, Cairo University' },
-                      { ar: 'بكالوريوس طب وجراحة – جامعة القاهرة بتقدير ممتاز مع مرتبة الشرف', en: 'Bachelor of Medicine & Surgery – Cairo University with Honors' },
-                      { ar: 'عضو الأكاديمية الأمريكية لطب العيون (AAO)', en: 'Member of the American Academy of Ophthalmology (AAO)' },
-                      { ar: 'عضو جمعية الشبكية الأوروبية (EURETINA)', en: 'Member of the European Society of Retina Specialists (EURETINA)' },
-                    ].map((item, idx) => (
-                      <li key={idx} className="flex items-start gap-2.5 text-sm md:text-base text-slate-custom">
-                        <span className="text-medical-blue font-bold shrink-0 mt-0.5">✓</span>
-                        <span>{lang === 'ar' ? item.ar : item.en}</span>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-
-                {activeTab === 'exp' && (
-                  <ul className="space-y-3">
-                    {[
-                      { ar: 'أستاذ مساعد بكلية الطب – جامعة القاهرة (قصر العيني).', en: 'Assistant Professor of Ophthalmology at Kasr Al-Ainy, Cairo University.' },
-                      { ar: 'استشاري طب وجراحة العيون معتمد بوزارة الصحة المصرية.', en: 'Certified Ophthalmology Consultant by the Egyptian Ministry of Health.' },
-                      { ar: 'طبيب استشاري بمركز نور العيون التخصصي – الهرم (عيادة الشبكية والليزك).', en: 'Consultant Ophthalmologist at Nour El-Oyoun Specialized Center – Haram.' },
-                      { ar: 'تدريب أطباء المستقبل في ورش عمل وجلسات عملية بأقسام العيون بقصر العيني.', en: 'Training medical students and residents in practical workshops in ophthalmology departments.' }
-                    ].map((item, idx) => (
-                      <li key={idx} className="flex items-start gap-2.5 text-sm md:text-base text-slate-custom">
-                        <span className="text-trust-green font-bold shrink-0 mt-1">●</span>
-                        <span>{lang === 'ar' ? item.ar : item.en}</span>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-
-                {activeTab === 'tech' && (
-                  <div className="space-y-4">
-                    <p className="text-slate-custom text-sm leading-relaxed mb-0">
-                      {lang === 'ar'
-                        ? 'نستخدم في العيادة أحدث التجهيزات التشخيصية والعلاجية لضمان سلامة المرضى، بما في ذلك مجهر المصباح الشقي (Slit Lamp) للفحص التفصيلي، وأجهزة التصوير الطبقي (OCT) وموجات العين فوق الصوتية.'
-                        : 'Our clinic uses state-of-the-art diagnostic tools for patient safety, including Slit Lamp bio-microscopes for comprehensive checking, OCT scanners, and ocular ultrasound.'}
-                    </p>
-
-                    {/* Dual Cards for Images */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-                      <div className="bg-[#F8FAFC] p-2.5 rounded-xl border border-divider/60 flex flex-col items-center">
-                        <img 
-                          src={getAssetUrl('/images/slit-lamp-examination.png')} 
-                          alt="Slit Lamp Exam" 
-                          className="w-full h-24 object-cover rounded-lg mb-2"
-                          loading="lazy" 
-                        />
-                        <span className="text-[10px] text-slate-custom text-center font-medium leading-tight">
-                          {lang === 'ar'
-                            ? 'فحص المصباح الشقي (Slit Lamp) لتقييم القرنية والعدسة بدقة'
-                            : 'Slit Lamp exam to check cornea & lens'}
-                        </span>
-                      </div>
-
-                      <div className="bg-[#F8FAFC] p-2.5 rounded-xl border border-divider/60 flex flex-col items-center">
-                        <img 
-                          src={getAssetUrl('/images/retina-layers.png')} 
-                          alt="Retina Anatomy" 
-                          className="w-full h-24 object-contain rounded-lg mb-2 bg-white"
-                          loading="lazy" 
-                        />
-                        <span className="text-[10px] text-slate-custom text-center font-medium leading-tight">
-                          {lang === 'ar'
-                            ? 'مقطع توضيحي لأغشية الشبكية لعلاج اعتلال الماكولا والانفصال'
-                            : 'Anatomical retina layers diagram for advanced therapy'}
-                        </span>
-                      </div>
-                    </div>
-                  </div>
-                )}
-              </div>
+            <div className="space-y-4 mb-8 text-slate-custom text-sm md:text-base leading-relaxed">
+              <p>
+                {lang === 'ar'
+                  ? 'الأستاذ الدكتور أحمد عبدالله مهلهل هو أستاذ مساعد بكلية الطب - قصر العيني (جامعة القاهرة)، وحاصل على درجة الدكتوراه في طب وجراحة العيون. يمتلك خبرة طويلة في علاج أصعب الحالات وإجراء العمليات الدقيقة للشبكية والمياه البيضاء وتصحيح النظر.'
+                  : 'Prof. Dr. Ahmed Abdullah Mohelhel is an Assistant Professor at the Faculty of Medicine - Kasr Al-Ainy (Cairo University), and holder of MD in Ophthalmology. He has extensive experience in treating complex cases and performing micro-surgeries for retina, cataracts, and vision correction.'}
+              </p>
+              <p>
+                {lang === 'ar'
+                  ? 'يعد د. أحمد مهلهل من الكفاءات الطبية البارزة في مصر والوطن العربي، وهو عضو في كبرى الجمعيات الدولية المعنية بطب العيون مثل الأكاديمية الأمريكية لطب العيون والجمعية الأوروبية للشبكية (EURETINA).'
+                  : 'Dr. Ahmed Mohelhel is a prominent medical expert in Egypt and the Arab world, holding memberships in major international ophthalmology societies, including the American Academy of Ophthalmology and the European Society of Retina Specialists (EURETINA).'}
+              </p>
+              <p>
+                {lang === 'ar'
+                  ? 'يعمل كاستشاري معتمد بوزارة الصحة المصرية ويشرف على العيادة التخصصية للشبكية بمركز نور العيون بالهرم، ويقدم خدماته الإكلينيكية المتقدمة في فروع عياداته بالقاهرة والفيوم.'
+                  : 'He acts as a certified consultant by the Egyptian Ministry of Health, supervises the retina clinic at Nour El-Oyoun Center, and provides clinical consultations at his Cairo and Fayoum branches.'}
+              </p>
             </div>
 
-            {/* Vision Block */}
-            <div className="about-vision bg-soft-blue rounded-xl p-6 border-r-4 border-medical-blue mb-8">
-              <h4 className="text-medical-blue font-semibold text-lg mb-2">{t('about.vision.title', lang)}</h4>
-              <p className="text-deep-navy text-sm leading-relaxed">{t('about.vision.text', lang)}</p>
+            {/* Micro Vision Block */}
+            <div className="about-vision bg-soft-blue/60 rounded-2xl p-5 border-r-4 border-medical-blue flex gap-4 items-start">
+              <div className="w-8 h-8 rounded-full bg-medical-blue/10 flex items-center justify-center text-medical-blue shrink-0 mt-0.5">
+                <ShieldCheck size={18} />
+              </div>
+              <div>
+                <h4 className="text-medical-blue font-bold text-sm mb-1">{t('about.vision.title', lang)}</h4>
+                <p className="text-deep-navy text-xs md:text-sm leading-relaxed mb-0">{t('about.vision.text', lang)}</p>
+              </div>
             </div>
-
-            <a href="#booking" className="about-cta inline-flex items-center px-8 py-3.5 bg-medical-blue text-white text-sm font-semibold rounded-xl hover:bg-electric-blue transition-all duration-300 hover:-translate-y-0.5 hover:shadow-cta">
-              {t('about.cta', lang)}
-            </a>
           </div>
+        </div>
+
+        {/* Row 2: Spaced Professional Profile Cards Grid */}
+        <div className="about-row-2 grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Card 1: Academic & Memberships */}
+          <div className="about-card bg-white border border-divider/60 rounded-3xl p-8 shadow-sm hover:shadow-[0_12px_40px_rgba(7,26,43,0.04)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <div className="w-12 h-12 rounded-2xl bg-medical-blue/10 flex items-center justify-center text-medical-blue mb-6">
+                <GraduationCap size={24} />
+              </div>
+              <h3 className={`${fontClass} text-lg md:text-xl font-bold text-deep-navy mb-6`}>
+                {lang === 'ar' ? 'المؤهلات الأكاديمية والشهادات' : 'Academic Credentials'}
+              </h3>
+              <ul className="space-y-4">
+                {[
+                  { ar: 'دكتوراة في طب وجراحة العيون – كلية الطب قصر العيني (جامعة القاهرة)', en: 'MD in Ophthalmology – Kasr Al-Ainy, Cairo University' },
+                  { ar: 'بكالوريوس طب وجراحة – جامعة القاهرة بتقدير ممتاز مع مرتبة الشرف', en: 'Bachelor of Medicine & Surgery – Cairo University (Honors)' },
+                  { ar: 'عضو الأكاديمية الأمريكية لطب العيون (AAO)', en: 'Member of the American Academy of Ophthalmology (AAO)' },
+                  { ar: 'عضو جمعية الشبكية الأوروبية (EURETINA)', en: 'Member of the European Society of Retina Specialists (EURETINA)' },
+                ].map((item, idx) => (
+                  <li key={idx} className="flex items-start gap-2.5 text-sm text-slate-custom leading-relaxed">
+                    <Check size={16} className="text-medical-blue shrink-0 mt-0.5" />
+                    <span>{lang === 'ar' ? item.ar : item.en}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Card 2: Current Positions & Clinics */}
+          <div className="about-card bg-white border border-divider/60 rounded-3xl p-8 shadow-sm hover:shadow-[0_12px_40px_rgba(7,26,43,0.04)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <div className="w-12 h-12 rounded-2xl bg-medical-blue/10 flex items-center justify-center text-medical-blue mb-6">
+                <Award size={24} />
+              </div>
+              <h3 className={`${fontClass} text-lg md:text-xl font-bold text-deep-navy mb-6`}>
+                {lang === 'ar' ? 'المناصب والخبرات الحالية' : 'Positions & Affiliations'}
+              </h3>
+              <ul className="space-y-4">
+                {[
+                  { ar: 'أستاذ مساعد بكلية الطب – جامعة القاهرة (قصر العيني).', en: 'Assistant Professor at Faculty of Medicine – Cairo University (Kasr Al-Ainy).' },
+                  { ar: 'استشاري معتمد بوزارة الصحة ونقابة الأطباء المصرية.', en: 'Certified Ophthalmology Consultant by the MOH & Syndicate.' },
+                  { ar: 'طبيب استشاري بمركز نور العيون التخصصي – الهرم (الشبكية والليزك).', en: 'Consultant Ophthalmologist at Nour El-Oyoun Specialized Center.' },
+                  { ar: 'تدريب الأطباء المقيمين وورش العمل التخصصية بقصر العيني.', en: 'Training ophthalmology residents and holding clinical workshops at Kasr Al-Ainy.' }
+                ].map((item, idx) => (
+                  <li key={idx} className="flex items-start gap-2.5 text-sm text-slate-custom leading-relaxed">
+                    <Check size={16} className="text-trust-green shrink-0 mt-0.5" />
+                    <span>{lang === 'ar' ? item.ar : item.en}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Card 3: Clinical Technology & Diagnostics */}
+          <div className="about-card bg-white border border-divider/60 rounded-3xl p-8 shadow-sm hover:shadow-[0_12px_40px_rgba(7,26,43,0.04)] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between">
+            <div>
+              <div className="w-12 h-12 rounded-2xl bg-medical-blue/10 flex items-center justify-center text-medical-blue mb-6">
+                <Activity size={24} />
+              </div>
+              <h3 className={`${fontClass} text-lg md:text-xl font-bold text-deep-navy mb-5`}>
+                {lang === 'ar' ? 'التجهيزات والفحوصات بالعيادة' : 'Clinical Equipment'}
+              </h3>
+              <p className="text-slate-custom text-xs md:text-sm leading-relaxed mb-4">
+                {lang === 'ar'
+                  ? 'تشخيص متكامل بأدق الأجهزة مثل مجهر المصباح الشقي (Slit Lamp) للفحص العياني، وأشعة الـ OCT للشبكية.'
+                  : 'Accurate diagnoses using Slit Lamp microscopes, OCT optical scanning, and advanced ocular ultrasound.'}
+              </p>
+
+              {/* Sub-grid of images */}
+              <div className="grid grid-cols-2 gap-3 mt-2">
+                <div className="bg-[#F8FAFC] p-2 rounded-xl border border-divider/50 flex flex-col items-center">
+                  <div className="w-full h-16 rounded overflow-hidden mb-1.5">
+                    <img 
+                      src={getAssetUrl('/images/slit-lamp-examination.png')} 
+                      alt="Slit Lamp Exam" 
+                      className="w-full h-full object-cover" 
+                      loading="lazy" 
+                    />
+                  </div>
+                  <span className="text-[9px] text-slate-custom text-center leading-tight font-medium">
+                    {lang === 'ar' ? 'فحص المصباح الشقي' : 'Slit Lamp Exam'}
+                  </span>
+                </div>
+
+                <div className="bg-[#F8FAFC] p-2 rounded-xl border border-divider/50 flex flex-col items-center">
+                  <div className="w-full h-16 rounded overflow-hidden mb-1.5 bg-white flex items-center justify-center">
+                    <img 
+                      src={getAssetUrl('/images/retina-layers.png')} 
+                      alt="Retina Layers" 
+                      className="w-full h-full object-contain" 
+                      loading="lazy" 
+                    />
+                  </div>
+                  <span className="text-[9px] text-slate-custom text-center leading-tight font-medium">
+                    {lang === 'ar' ? 'طبقات الشبكية' : 'Retina Layers'}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Spaced Call to Action Button */}
+        <div className="text-center mt-14">
+          <a 
+            href="#booking" 
+            className="about-cta inline-flex items-center px-8 py-4 bg-medical-blue text-white text-sm font-semibold rounded-xl hover:bg-electric-blue transition-all duration-300 hover:-translate-y-0.5 hover:shadow-cta"
+          >
+            {t('about.cta', lang)}
+          </a>
         </div>
       </div>
     </section>
