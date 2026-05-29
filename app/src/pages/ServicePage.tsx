@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useLanguage } from '@/context/LanguageContext';
 import { t } from '@/data/translations';
-import { getAssetUrl } from '@/lib/utils';
 import { getServiceById, services } from '@/data/services';
 import { ChevronRight, ArrowRight, CheckCircle2 } from 'lucide-react';
 import gsap from 'gsap';
@@ -158,13 +157,13 @@ export default function ServicePage() {
                   {lang === 'ar' ? 'هل تحتاج إلى استشارة طبية؟' : 'Need a medical consultation?'}
                 </h3>
                 <p className="text-deep-navy/80 mb-6">
-                  {lang === 'ar' ? 'احجز موعدك الآن مع د. أحمد عبدالله مهلهل للحصول على التشخيص الدقيق' : 'Book your appointment now with Dr. Ahmed Abdullah Muhlhal for an accurate diagnosis'}
+                  {lang === 'ar' ? 'احجز موعدك الآن مع أ.د. أحمد عبدالله مهلهل للحصول على التشخيص الدقيق' : 'Book your appointment now with Prof. Dr. Ahmed Abdullah Mohelhel for an accurate diagnosis'}
                 </p>
                 <button 
                   onClick={() => navigate('/#booking')}
                   className="bg-medical-blue text-white px-8 py-3 rounded-full font-medium hover:bg-medical-blue/90 transition-all hover:scale-105 active:scale-95 shadow-lg shadow-medical-blue/20"
                 >
-                  {t('hero.cta', lang)}
+                  {t('hero.cta.primary', lang)}
                 </button>
               </div>
             </div>

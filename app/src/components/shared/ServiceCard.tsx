@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 import { useLanguage } from '@/context/LanguageContext';
-import { t } from '@/data/translations';
 import type { ServiceData } from '@/types';
 import { ScanEye, Droplets, Eye, Activity, Baby, Droplet, Search, Hexagon, ArrowLeft, ArrowRight, Check } from 'lucide-react';
 

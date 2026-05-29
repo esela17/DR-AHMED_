@@ -1,6 +1,6 @@
 import { useLanguage } from '@/context/LanguageContext';
 import { t } from '@/data/translations';
-import { Phone, Mail, MapPin } from 'lucide-react';
+import { Mail, MapPin } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 const quickLinks = [
@@ -47,8 +47,8 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="mb-4">
-              <span className="font-cairo font-bold text-2xl text-white block">د. أحمد عبدالله مهلهل</span>
-              <span className="font-outfit font-semibold text-[10px] text-warm-gold tracking-[0.15em] uppercase">DR. AHMED MUHLHAL</span>
+              <span className="font-cairo font-bold text-2xl text-white block">أ.د. أحمد عبدالله مهلهل</span>
+              <span className="font-outfit font-semibold text-[10px] text-warm-gold tracking-[0.15em] uppercase">PROF. DR. AHMED MOHELHEL</span>
             </div>
             <p className="text-slate-custom text-sm mb-6">{t('footer.tagline', lang)}</p>
             <div className="flex gap-4">
@@ -94,27 +94,53 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <h4 className="text-white font-semibold text-lg mb-5">{t('footer.contact', lang)}</h4>
-            <div className="space-y-4">
-              <div className="flex items-start gap-3">
-                <MapPin size={18} className="text-medical-blue mt-0.5 shrink-0" />
-                <span className="text-slate-custom text-sm">{t('footer.address', lang)}</span>
+            <div className="space-y-6 text-sm text-slate-custom">
+              {/* Dokki Branch */}
+              <div className="space-y-1.5">
+                <p className="font-bold text-white mb-1 flex items-center gap-1.5">
+                  <MapPin size={16} className="text-medical-blue" />
+                  {lang === 'ar' ? 'عيادة الدقي (الجيزة):' : 'Dokki Clinic (Giza):'}
+                </p>
+                <p className="text-xs leading-relaxed pl-5 pr-5 mb-1">
+                  {lang === 'ar' ? 'برج الإخلاص للأطباء، 96 أ شارع التحرير، الدقي' : 'El-Ekhlas Doctors Tower, 96A El-Tahrir St., Dokki'}
+                </p>
+                <div className="pl-5 pr-5 flex flex-col gap-1 text-xs">
+                  <a href="tel:01110505253" className="hover:text-medical-blue transition-colors">📱 01110505253</a>
+                  <a href="tel:02337485244" className="hover:text-medical-blue transition-colors">☎️ 02337485244 (أرضي)</a>
+                </div>
               </div>
-              <div className="flex items-center gap-3">
-                <Phone size={18} className="text-medical-blue shrink-0" />
-                <a href="tel:+201001234567" className="text-slate-custom hover:text-medical-blue text-sm transition-colors">{t('booking.phone', lang)}</a>
+
+              {/* Fayoum Branch */}
+              <div className="space-y-1.5">
+                <p className="font-bold text-white mb-1 flex items-center gap-1.5">
+                  <MapPin size={16} className="text-medical-blue" />
+                  {lang === 'ar' ? 'عيادة الفيوم:' : 'Fayoum Clinic:'}
+                </p>
+                <p className="text-xs leading-relaxed pl-5 pr-5 mb-1">
+                  {lang === 'ar' ? 'برج الحادقة - أمام مستشفى التحرير، الفيوم' : 'El-Hadeqa Tower - In front of El-Tahrir Hospital, Fayoum'}
+                </p>
+                <div className="pl-5 pr-5 flex flex-col gap-1 text-xs">
+                  <a href="tel:01159353553" className="hover:text-medical-blue transition-colors">📱 01159353553</a>
+                  <a href="tel:01007513010" className="hover:text-medical-blue transition-colors">📱 01007513010</a>
+                  <a href="tel:01110505235" className="hover:text-medical-blue transition-colors">📱 01110505235</a>
+                </div>
               </div>
-              <div className="flex items-center gap-3">
-                <Mail size={18} className="text-medical-blue shrink-0" />
-                <a href="mailto:info@dramedeye.com" className="text-slate-custom hover:text-medical-blue text-sm transition-colors">{t('footer.email', lang)}</a>
+
+              {/* WhatsApp & Email */}
+              <div className="pt-2 space-y-3">
+                <div className="flex items-center gap-2">
+                  <Mail size={16} className="text-medical-blue" />
+                  <a href="mailto:info@dramedmohelhel.com" className="hover:text-medical-blue transition-colors text-xs">info@dramedmohelhel.com</a>
+                </div>
+                <a
+                  href="https://wa.me/201110505253"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-2.5 bg-trust-green text-white text-xs font-semibold rounded-lg text-center block hover:brightness-110 transition-all"
+                >
+                  {t('footer.whatsapp', lang)}
+                </a>
               </div>
-              <a
-                href="https://wa.me/201001234567"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 w-full py-3 bg-trust-green text-white text-sm font-semibold rounded-lg text-center block hover:brightness-110 transition-all"
-              >
-                {t('footer.whatsapp', lang)}
-              </a>
             </div>
           </div>
         </div>

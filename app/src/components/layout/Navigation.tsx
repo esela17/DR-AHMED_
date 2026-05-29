@@ -94,10 +94,10 @@ export default function Navigation() {
           {/* Logo */}
           <a href="/" onClick={(e) => { e.preventDefault(); handleNavClick('#hero'); }} className="flex flex-col items-start shrink-0">
             <span className={`font-cairo font-bold text-[20px] text-white leading-tight`}>
-              د. أحمد عبدالله مهلهل
+              أ.د. أحمد عبدالله مهلهل
             </span>
             <span className="font-outfit font-semibold text-[10px] text-warm-gold tracking-[0.15em] uppercase">
-              DR. AHMED MUHLHAL
+              PROF. DR. AHMED MOHELHEL
             </span>
           </a>
 

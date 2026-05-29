@@ -10,7 +10,13 @@ interface Props {
 
 export default function BookingForm({ compact = false, lang }: Props) {
   const [formData, setFormData] = useState({
-    name: '', phone: '', service: '', date: '', timeSlot: '', notes: '',
+    name: '',
+    phone: '',
+    service: '',
+    branch: '',
+    date: '',
+    timeSlot: '',
+    notes: '',
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [status, setStatus] = useState<'idle' | 'loading' | 'success'>('idle');
@@ -24,6 +30,7 @@ export default function BookingForm({ compact = false, lang }: Props) {
     if (!formData.phone.trim()) errs.phone = t('validation.required', lang);
     else if (!/^01[0-2,5]\d{8}$/.test(formData.phone)) errs.phone = t('validation.phone', lang);
     if (!formData.service) errs.service = t('validation.required', lang);
+    if (!formData.branch) errs.branch = t('validation.required', lang);
     setErrors(errs);
     return Object.keys(errs).length === 0;
   };
@@ -46,6 +53,12 @@ export default function BookingForm({ compact = false, lang }: Props) {
   if (compact) {
     return (
       <form onSubmit={handleSubmit} className="space-y-3">
+        <select value={formData.branch} onChange={e => update('branch', e.target.value)} className={inputClass}>
+          <option value="">{t('booking.form.branch', lang)}</option>
+          <option value="c1">{t('booking.form.branch.c1', lang)}</option>
+          <option value="c2">{t('booking.form.branch.c2', lang)}</option>
+        </select>
+        {errors.branch && <p className={errorClass}>{errors.branch}</p>}
         <select value={formData.service} onChange={e => update('service', e.target.value)} className={inputClass}>
           <option value="">{t('hero.widget.service', lang)}</option>
           {services.map(s => <option key={s.id} value={s.id}>{lang === 'ar' ? s.titleAr : s.titleEn}</option>)}
@@ -83,12 +96,22 @@ export default function BookingForm({ compact = false, lang }: Props) {
             <input type="tel" placeholder={t('booking.form.phonePlaceholder', lang)} value={formData.phone} onChange={e => update('phone', e.target.value)} className={`${inputClass} pl-24`} />
             {errors.phone && <p className={errorClass}>{errors.phone}</p>}
           </div>
-          <div>
-            <select value={formData.service} onChange={e => update('service', e.target.value)} className={inputClass}>
-              <option value="">{t('booking.form.service', lang)}</option>
-              {services.map(s => <option key={s.id} value={s.id}>{lang === 'ar' ? s.titleAr : s.titleEn}</option>)}
-            </select>
-            {errors.service && <p className={errorClass}>{errors.service}</p>}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <select value={formData.branch} onChange={e => update('branch', e.target.value)} className={inputClass}>
+                <option value="">{t('booking.form.branch', lang)}</option>
+                <option value="c1">{t('booking.form.branch.c1', lang)}</option>
+                <option value="c2">{t('booking.form.branch.c2', lang)}</option>
+              </select>
+              {errors.branch && <p className={errorClass}>{errors.branch}</p>}
+            </div>
+            <div>
+              <select value={formData.service} onChange={e => update('service', e.target.value)} className={inputClass}>
+                <option value="">{t('booking.form.service', lang)}</option>
+                {services.map(s => <option key={s.id} value={s.id}>{lang === 'ar' ? s.titleAr : s.titleEn}</option>)}
+              </select>
+              {errors.service && <p className={errorClass}>{errors.service}</p>}
+            </div>
           </div>
           <div className="grid grid-cols-2 gap-4">
             <input type="date" min={today} max={maxDate} value={formData.date} onChange={e => update('date', e.target.value)} className={inputClass} />

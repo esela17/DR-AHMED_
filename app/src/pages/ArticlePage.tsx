@@ -4,6 +4,7 @@ import { useLanguage } from '@/context/LanguageContext';
 import { t } from '@/data/translations';
 import { getAssetUrl } from '@/lib/utils';
 import { getArticleBySlug, getRelatedArticles } from '@/data/articles';
+import type { ArticleData, ArticleBodySection } from '@/types';
 import BlogCard from '@/components/shared/BlogCard';
 import { Clock, Calendar, Facebook, Twitter, Link2 } from 'lucide-react';
 import gsap from 'gsap';
@@ -62,7 +63,7 @@ export default function ArticlePage() {
     );
   }
 
-  const tocItems = article.body?.filter(s => s.type === 'h2').map((s, i) => ({
+  const tocItems = article.body?.filter((s: ArticleBodySection) => s.type === 'h2').map((s: ArticleBodySection, i: number) => ({
     id: `h2-${i}`,
     labelAr: s.contentAr,
     labelEn: s.contentEn,
@@ -76,19 +77,19 @@ export default function ArticlePage() {
 
   const renderBody = () => {
     if (!article.body) return null;
-    return article.body.map((section, i) => {
+    return article.body.map((section: ArticleBodySection, i: number) => {
       const isAr = lang === 'ar';
       switch (section.type) {
         case 'h2':
-          return <h2 key={i} id={`h2-${tocItems.findIndex(t => (isAr ? t.labelAr : t.labelEn) === (isAr ? section.contentAr : section.contentEn))}`} className={`${fontClass} text-2xl md:text-3xl font-bold text-deep-navy mt-10 mb-4 leading-snug`}>{isAr ? section.contentAr : section.contentEn}</h2>;
+          return <h2 key={i} id={`h2-${tocItems.findIndex((t: { id: string; labelAr: string; labelEn: string }) => (isAr ? t.labelAr : t.labelEn) === (isAr ? section.contentAr : section.contentEn))}`} className={`${fontClass} text-2xl md:text-3xl font-bold text-deep-navy mt-10 mb-4 leading-snug`}>{isAr ? section.contentAr : section.contentEn}</h2>;
         case 'h3':
           return <h3 key={i} className={`${fontClass} text-xl font-bold text-deep-navy mt-8 mb-3`}>{isAr ? section.contentAr : section.contentEn}</h3>;
         case 'p':
           return <p key={i} className="text-deep-navy/85 text-base leading-[1.8] mb-4">{isAr ? section.contentAr : section.contentEn}</p>;
         case 'ul':
-          return <ul key={i} className="list-disc list-inside space-y-2 mb-6 marker:text-medical-blue">{section.items?.map((item, j) => <li key={j} className="text-deep-navy/85 text-base leading-relaxed">{isAr ? item.contentAr : item.contentEn}</li>)}</ul>;
+          return <ul key={i} className="list-disc list-inside space-y-2 mb-6 marker:text-medical-blue">{section.items?.map((item: { contentAr: string; contentEn: string }, j: number) => <li key={j} className="text-deep-navy/85 text-base leading-relaxed">{isAr ? item.contentAr : item.contentEn}</li>)}</ul>;
         case 'ol':
-          return <ol key={i} className="list-decimal list-inside space-y-3 mb-6 marker:text-medical-blue marker:font-semibold">{section.items?.map((item, j) => <li key={j} className="text-deep-navy/85 text-base leading-relaxed">{isAr ? item.contentAr : item.contentEn}</li>)}</ol>;
+          return <ol key={i} className="list-decimal list-inside space-y-3 mb-6 marker:text-medical-blue marker:font-semibold">{section.items?.map((item: { contentAr: string; contentEn: string }, j: number) => <li key={j} className="text-deep-navy/85 text-base leading-relaxed">{isAr ? item.contentAr : item.contentEn}</li>)}</ol>;
         case 'blockquote':
           return <blockquote key={i} className={`border-r-4 border-warm-gold bg-soft-blue rounded-lg p-5 md:p-6 my-6 ${isRtl ? 'border-r-4' : 'border-l-4 border-r-0'}`}><p className="text-deep-navy italic text-base leading-relaxed">{isAr ? section.contentAr : section.contentEn}</p></blockquote>;
         default: return null;
@@ -126,8 +127,8 @@ export default function ArticlePage() {
               </h1>
               <div className="flex flex-wrap items-center gap-4 text-slate-custom text-xs">
                 <span className="flex items-center gap-2">
-                  <img src={getAssetUrl('/images/doctor-portrait.png')} alt={lang === 'ar' ? 'د. أحمد عبدالله مهلهل' : 'Dr. Ahmed Abdullah Muhlhal'} className="w-8 h-8 rounded-full object-cover" loading="lazy" />
-                  <span className="font-semibold text-deep-navy">{lang === 'ar' ? 'د. أحمد عبدالله مهلهل' : 'Dr. Ahmed Abdullah Muhlhal'}</span>
+                  <img src={getAssetUrl('/images/doctor-portrait.png')} alt={lang === 'ar' ? 'أ.د. أحمد عبدالله مهلهل' : 'Prof. Dr. Ahmed Abdullah Mohelhel'} className="w-8 h-8 rounded-full object-cover" loading="lazy" />
+                  <span className="font-semibold text-deep-navy">{lang === 'ar' ? 'أ.د. أحمد عبدالله مهلهل' : 'Prof. Dr. Ahmed Abdullah Mohelhel'}</span>
                 </span>
                 <span className="flex items-center gap-1"><Calendar size={14} /> {article.date}</span>
                 <span className="flex items-center gap-1"><Clock size={14} /> {article.readTime} {t('article.minRead', lang)}</span>
@@ -154,12 +155,12 @@ export default function ArticlePage() {
 
             {/* Author Bio */}
             <div className="flex items-start gap-5 bg-[#F7F9FC] rounded-xl p-6 mt-8">
-              <img src={getAssetUrl('/images/doctor-portrait.png')} alt={lang === 'ar' ? 'د. أحمد عبدالله مهلهل' : 'Dr. Ahmed Abdullah Muhlhal'} className="w-14 h-14 rounded-full object-cover shrink-0" loading="lazy" />
+              <img src={getAssetUrl('/images/doctor-portrait.png')} alt={lang === 'ar' ? 'أ.د. أحمد عبدالله مهلهل' : 'Prof. Dr. Ahmed Abdullah Mohelhel'} className="w-14 h-14 rounded-full object-cover shrink-0" loading="lazy" />
               <div>
                 <p className="text-slate-custom text-xs mb-1">{t('article.writtenBy', lang)}</p>
-                <h4 className="text-deep-navy font-semibold text-lg mb-1">{lang === 'ar' ? 'د. أحمد عبدالله مهلهل' : 'Dr. Ahmed Abdullah Muhlhal'}</h4>
+                <h4 className="text-deep-navy font-semibold text-lg mb-1">{lang === 'ar' ? 'أ.د. أحمد عبدالله مهلهل' : 'Prof. Dr. Ahmed Abdullah Mohelhel'}</h4>
                 <p className="text-slate-custom text-sm">
-                  {lang === 'ar' ? 'أخصائي طب وجراحة العيون بخبرة ٢٠+ عاماً. يؤمن بأن كل مريض يستحق رؤية واضحة.' : 'Ophthalmology specialist with 20+ years of experience. Believes every patient deserves clear vision.'}
+                  {lang === 'ar' ? 'أستاذ مساعد بكلية الطب قصر العيني (جامعة القاهرة)، دكتوراة طب العيون وجراحتها، واستشاري الشبكية والمياه البيضاء وتصحيح النظر.' : 'Assistant Professor at Kasr Al-Ainy (Cairo University), MD in Ophthalmology, and Consultant in Retina, Cataract, and Refractive Surgery.'}
                 </p>
               </div>
             </div>
@@ -202,7 +203,7 @@ export default function ArticlePage() {
                 <div className="bg-white rounded-xl p-6 shadow-[0_4px_16px_rgba(0,0,0,0.04)]">
                   <h4 className="text-deep-navy font-semibold text-base mb-4">{t('article.toc', lang)}</h4>
                   <ul className="space-y-2">
-                    {tocItems.map((item, i) => (
+                    {tocItems.map((item: { id: string; labelAr: string; labelEn: string }, i: number) => (
                       <li key={i}>
                         <button
                           onClick={() => {
@@ -238,7 +239,7 @@ export default function ArticlePage() {
               {t('article.related', lang)}
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {related.map(a => <BlogCard key={a.id} article={a} />)}
+              {related.map((a: ArticleData) => <BlogCard key={a.id} article={a} />)}
             </div>
           </div>
         )}

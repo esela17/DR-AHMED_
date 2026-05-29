@@ -219,3 +219,14 @@ export const articles: ArticleData[] = [
     ],
   },
 ];
+
+export const getArticleBySlug = (slug: string) => {
+  return articles.find(a => a.slug === slug);
+};
+
+export const getRelatedArticles = (slug: string) => {
+  const current = getArticleBySlug(slug);
+  if (!current) return [];
+  return articles.filter(a => a.slug !== slug && a.categoryAr === current.categoryAr).slice(0, 3);
+};
+
