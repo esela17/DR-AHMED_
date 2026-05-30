@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useLanguage } from '@/context/LanguageContext';
+import { useSEO } from '@/hooks/useSEO';
 import { t } from '@/data/translations';
 import { getAssetUrl } from '@/lib/utils';
 import { getArticleBySlug, getRelatedArticles } from '@/data/articles';
@@ -18,6 +19,21 @@ export default function ArticlePage() {
 
   const article = slug ? getArticleBySlug(slug) : undefined;
   const related = slug ? getRelatedArticles(slug) : [];
+
+  useSEO({
+    title: article 
+      ? (lang === 'ar' ? `${article.titleAr} | أ.د. أحمد عبدالله مهلهل` : `${article.titleEn} | Prof. Dr. Ahmed Abdullah Mohelhel`)
+      : (lang === 'ar' ? 'المقال غير موجود | أ.د. أحمد عبدالله مهلهل' : 'Article Not Found | Prof. Dr. Ahmed Abdullah Mohelhel'),
+    description: article
+      ? (lang === 'ar' ? article.excerptAr : article.excerptEn)
+      : '',
+    keywords: article
+      ? (lang === 'ar' 
+          ? `${article.titleAr}, ${article.categoryAr}, مدونة العيون, مقالات طبية, دكتور أحمد عبدالله مهلهل` 
+          : `${article.titleEn}, ${article.categoryEn}, eye blog, medical articles, Dr Ahmed Mohelhel`)
+      : '',
+    lang
+  });
 
   useEffect(() => {
     window.scrollTo(0, 0);

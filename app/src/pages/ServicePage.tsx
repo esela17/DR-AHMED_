@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useLanguage } from '@/context/LanguageContext';
+import { useSEO } from '@/hooks/useSEO';
 import { t } from '@/data/translations';
 import { getServiceById, services } from '@/data/services';
 import { ChevronRight, ArrowRight, CheckCircle2 } from 'lucide-react';
@@ -15,6 +16,19 @@ export default function ServicePage() {
   const navigate = useNavigate();
 
   const service = id ? getServiceById(id) : null;
+
+  useSEO({
+    title: service 
+      ? (lang === 'ar' ? `${service.titleAr} | أ.د. أحمد مهلهل` : `${service.titleEn} | Prof. Dr. Ahmed Mohelhel`)
+      : (lang === 'ar' ? 'الخدمة الطبية | أ.د. أحمد مهلهل' : 'Medical Service | Prof. Dr. Ahmed Mohelhel'),
+    description: service
+      ? (lang === 'ar' ? service.descAr : service.descEn)
+      : '',
+    keywords: service
+      ? (lang === 'ar' ? `${service.titleAr}, دكتور عيون, استشاري عيون, قصر العيني` : `${service.titleEn}, eye clinic, ophthalmologist Egypt`)
+      : '',
+    lang
+  });
 
   useEffect(() => {
     window.scrollTo(0, 0);

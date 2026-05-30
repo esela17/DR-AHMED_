@@ -1,5 +1,6 @@
 import { useState, useMemo, useEffect, useRef } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
+import { useSEO } from '@/hooks/useSEO';
 import { t } from '@/data/translations';
 import { articles } from '@/data/articles';
 import BlogCard from '@/components/shared/BlogCard';
@@ -17,6 +18,20 @@ const categories = [
 
 export default function BlogListPage() {
   const { lang, dir } = useLanguage();
+  
+  useSEO({
+    title: lang === 'ar' 
+      ? 'المدونة الطبية وصحة العيون | أ.د. أحمد عبدالله مهلهل' 
+      : 'Medical Blog & Eye Health | Prof. Dr. Ahmed Abdullah Mohelhel',
+    description: lang === 'ar'
+      ? 'مقالات طبية مبسطة وموثوقة لتحسين صحة العيون والوقاية من المشاكل البصرية بقلم الأستاذ الدكتور أحمد عبدالله مهلهل.'
+      : 'Simplified and reliable medical articles to improve eye health and prevent vision problems by Prof. Dr. Ahmed Abdullah Mohelhel.',
+    keywords: lang === 'ar'
+      ? 'مدونة طب العيون, نصائح صحة العيون, جراحة العيون, الوقاية من جفاف العين, الليزك والمياه البيضاء'
+      : 'ophthalmology blog, eye health tips, eye surgery articles, prevent dry eyes, LASIK blog',
+    lang
+  });
+
   const [search, setSearch] = useState('');
   const [activeCat, setActiveCat] = useState('all');
   const [visibleCount, setVisibleCount] = useState(6);
