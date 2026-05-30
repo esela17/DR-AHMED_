@@ -43,6 +43,10 @@ jobs:
         env:
           NODE_ENV: production
 
+      - name: Copy index.html to 404.html for GitHub Pages routing
+        run: cp dist/index.html dist/404.html
+        working-directory: ./app
+
       - name: Debug Output
         run: ls -la ./app/dist
 
