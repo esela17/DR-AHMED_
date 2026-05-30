@@ -35,11 +35,39 @@ export default function BookingForm({ compact = false, lang }: Props) {
     return Object.keys(errs).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
     setStatus('loading');
-    setTimeout(() => setStatus('success'), 1500);
+
+    const sheetUrl = import.meta.env.VITE_GOOGLE_SHEET_URL || 'https://script.google.com/macros/s/AKfycbzESRbc0MymghfPj-ejW3FajIY8mHecD_MU0TIF-86CUvN74WjHUp_erU2mT3N6oLkfag/exec';
+
+    if (!sheetUrl || sheetUrl.includes('YOUR_SCRIPT_ID_HERE') || sheetUrl === '') {
+      // Simulate success if URL is not configured
+      setTimeout(() => setStatus('success'), 1500);
+      return;
+    }
+
+    try {
+      await fetch(sheetUrl, {
+        method: 'POST',
+        mode: 'no-cors', // Bypass CORS issues with Google Apps Script redirects
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...formData,
+          branchName: formData.branch === 'c1' ? 'عيادة الدقي (القاهرة)' : 'عيادة الفيوم',
+          serviceName: services.find(s => s.id === formData.service)?.titleAr || formData.service,
+          dateCreated: new Date().toLocaleString('ar-EG'),
+        }),
+      });
+      setStatus('success');
+    } catch (error) {
+      console.error('Error submitting booking:', error);
+      setErrors({ submit: lang === 'ar' ? 'حدث خطأ في الشبكة، برجاء المحاولة لاحقاً.' : 'Network error, please try again later.' });
+      setStatus('idle');
+    }
   };
 
   const update = (field: string, val: string) => {
@@ -123,6 +151,7 @@ export default function BookingForm({ compact = false, lang }: Props) {
             </select>
           </div>
           <textarea rows={3} placeholder={t('booking.form.notesPlaceholder', lang)} value={formData.notes} onChange={e => update('notes', e.target.value)} className={`${inputClass} resize-y`} />
+          {errors.submit && <p className="text-red-500 text-sm font-semibold text-center mt-2">{errors.submit}</p>}
           <button type="submit" disabled={status === 'loading'} className="w-full py-4 bg-medical-blue text-white font-semibold rounded-xl hover:bg-electric-blue transition-all duration-300 hover:-translate-y-0.5 hover:shadow-cta disabled:opacity-70 flex items-center justify-center gap-2">
             {status === 'loading' ? <><Loader2 size={18} className="animate-spin" /> {t('booking.form.loading', lang)}</> : t('booking.form.submit', lang)}
           </button>
