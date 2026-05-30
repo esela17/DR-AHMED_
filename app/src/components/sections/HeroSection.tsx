@@ -1,13 +1,12 @@
 import { useEffect, useRef } from 'react';
 import { useLanguage } from '@/context/LanguageContext';
 import { t } from '@/data/translations';
-import { useRGBCanvas } from '@/hooks/useCanvas';
+import { getAssetUrl } from '@/lib/utils';
 import { ArrowDown, MessageCircle } from 'lucide-react';
 import gsap from 'gsap';
 
 export default function HeroSection() {
   const { lang, dir } = useLanguage();
-  const canvasRef = useRGBCanvas();
   const contentRef = useRef<HTMLDivElement>(null);
   const indicatorRef = useRef<HTMLDivElement>(null);
   const isRtl = dir === 'rtl';
@@ -32,18 +31,21 @@ export default function HeroSection() {
 
   return (
     <section id="hero" className="relative w-full min-h-[100dvh] overflow-hidden bg-deep-navy flex items-center">
-      {/* Canvas */}
-      <canvas
-        ref={canvasRef}
-        className="absolute inset-0 w-full h-full"
-        style={{ imageRendering: 'pixelated' }}
-        role="img"
-        aria-label={lang === 'ar' ? 'خلفية تفاعلية' : 'Interactive background'}
-      />
+      {/* Background Image Banner */}
+      <div className="absolute inset-0 w-full h-full overflow-hidden">
+        <img 
+          src={getAssetUrl('/images/cov-doc.png')} 
+          alt={lang === 'ar' ? 'عيادة أ.د. أحمد عبدالله مهلهل' : 'Prof. Dr. Ahmed Abdullah Mohelhel Clinic'} 
+          className="w-full h-full object-cover object-center lg:object-right"
+          loading="eager"
+        />
+        {/* Subtle overlay to ensure high readability of text */}
+        <div className="absolute inset-0 bg-deep-navy/35 bg-gradient-to-r from-deep-navy/80 via-deep-navy/20 to-transparent" />
+      </div>
 
       {/* Content */}
-      <div ref={contentRef} className="relative z-10 content-container py-24 lg:py-0">
-        <div className="max-w-[700px]">
+      <div ref={contentRef} className={`relative z-10 content-container py-24 lg:py-0 flex ${isRtl ? 'justify-end' : 'justify-start'} w-full`}>
+        <div className="max-w-[700px] w-full">
           {/* Glassmorphism Card */}
           <div className="glassmorphism p-8 md:p-12">
             <span className="hero-badge inline-block px-4 py-1.5 bg-soft-blue/20 text-medical-blue text-xs font-semibold rounded-full mb-5 border-r-2 border-r-warm-gold">
@@ -62,7 +64,7 @@ export default function HeroSection() {
               <a href="#booking" className="hero-cta-1 inline-flex items-center px-8 py-3.5 bg-medical-blue text-white text-sm font-semibold rounded-xl hover:bg-electric-blue transition-all duration-300 hover:-translate-y-0.5 hover:shadow-cta">
                 {t('hero.cta.primary', lang)}
               </a>
-              <a href="https://wa.me/201001234567" target="_blank" rel="noopener noreferrer" className="hero-cta-2 inline-flex items-center gap-2 px-8 py-3.5 border-[1.5px] border-white/40 text-white text-sm font-semibold rounded-xl hover:bg-white/10 hover:border-white/70 transition-all duration-300">
+              <a href="https://wa.me/201110505253" target="_blank" rel="noopener noreferrer" className="hero-cta-2 inline-flex items-center gap-2 px-8 py-3.5 border-[1.5px] border-white/40 text-white text-sm font-semibold rounded-xl hover:bg-white/10 hover:border-white/70 transition-all duration-300">
                 <MessageCircle size={18} />
                 {t('hero.cta.secondary', lang)}
               </a>

@@ -82,7 +82,7 @@ export default function AboutSection() {
             <div className="mb-4">
               <SectionBadge label={t('about.badge', lang)} />
             </div>
-            <h2 className={`about-headline ${fontClass} text-3xl md:text-4xl lg:text-[44px] font-bold text-deep-navy leading-tight mb-5`}>
+            <h2 className={`about-headline ${fontClass} text-3xl md:text-4xl lg:text-[44px] font-bold text-deep-navy leading-[1.45] mb-5`}>
               {t('about.headline', lang)}
             </h2>
             <p className="about-subtitle text-lg md:text-xl text-medical-blue font-semibold mb-6">
