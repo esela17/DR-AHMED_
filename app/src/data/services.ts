@@ -2,6 +2,66 @@ import type { ServiceData } from '@/types';
 
 export const services: ServiceData[] = [
   {
+    id: 'comprehensive-exam',
+    icon: 'Eye',
+    titleAr: 'كشف طبي شامل للعيون',
+    titleEn: 'Comprehensive Eye Examination',
+    descAr: 'فحص طبي متكامل للعين وقاع العين والشبكية يستغرق من 10 إلى 15 دقيقة لتحديد حالة الإبصار وتشخيص المشاكل الطبية بدقة وأمانة.',
+    descEn: 'A complete medical examination of the eye, fundus, and retina taking 10 to 15 minutes to diagnose refractive and medical issues with precision and honesty.',
+    benefitsAr: [
+      'فحص دقيق ومفصل يستغرق من 10 إلى 15 دقيقة',
+      'قياس ضغط العين والحدقة وفحص قاع العين بالمجهر',
+      'تحديد قياسات النظارة الطبية بدقة متناهية',
+      'تشخيص مبكر للمياه البيضاء والزرقاء ومشاكل الشبكية'
+    ],
+    benefitsEn: [
+      'Detailed examination taking 10 to 15 minutes',
+      'Intraocular pressure measurement & slit lamp fundus exam',
+      'Highly precise prescription of corrective eyeglasses',
+      'Early detection of cataracts, glaucoma & retinal diseases'
+    ],
+    body: [
+      {
+        type: 'p',
+        contentAr: 'الكشف الطبي الشامل هو الخطوة الأولى والأساسية للحفاظ على صحة وسلامة عينيك. يلتزم أ.د. أحمد عبدالله مهلهل بإعطاء كل مريض الوقت الكافي للكشف الكامل (من 10 إلى 15 دقيقة)، مستخدماً أحدث أجهزة الفحص والتشخيص العالمية.',
+        contentEn: 'A comprehensive medical exam is the first essential step in preserving your vision. Prof. Dr. Ahmed Abdullah Mohelhel dedicates 10 to 15 minutes to fully examine each patient, employing state-of-the-art diagnostic equipment.'
+      },
+      {
+        type: 'h2',
+        contentAr: 'ماذا يشمل الكشف الطبي بالعيادة؟',
+        contentEn: 'What Does the Medical Examination Include?'
+      },
+      {
+        type: 'ul',
+        contentAr: '',
+        contentEn: '',
+        items: [
+          {
+            contentAr: 'فحص حدة الإبصار وتحديد عيوب الانكسار (طول/قصر النظر والاستجماتيزم).',
+            contentEn: 'Visual acuity testing and precise refraction measurement (myopia, hyperopia, astigmatism).'
+          },
+          {
+            contentAr: 'فحص الجزء الأمامي للعين باستخدام مجهر المصباح الشقي (Slit Lamp).',
+            contentEn: 'Slit Lamp microscope examination of the anterior segment of the eye.'
+          },
+          {
+            contentAr: 'قياس ضغط العين الوقائي للكشف المبكر عن الجلوكوما (المياه الزرقاء).',
+            contentEn: 'Intraocular pressure testing for early detection of glaucoma.'
+          },
+          {
+            contentAr: 'فحص قاع العين المباشر وتوسيع حدقة العين للاطمئنان على الشبكية والعصب البصري والجسم الزجاجي.',
+            contentEn: 'Dilated fundus examination to evaluate the retina, optic nerve, and vitreous humor.'
+          }
+        ]
+      },
+      {
+        type: 'p',
+        contentAr: 'نحرص دائماً على أن يحصل المريض على معرفة كاملة ودقيقة بحالته الصحية بأمانة تامة، مع تقديم أفضل الحلول الطبية أو الجراحية الملائمة له بناءً على تاريخ طويل وخبرة تقترب من 30 عاماً.',
+        contentEn: 'We ensure that every patient receives a complete and honest explanation of their condition, offering optimal medical or surgical solutions backed by nearly 30 years of clinical expertise.'
+      }
+    ]
+  },
+  {
     id: 'lasik',
     icon: 'ScanEye',
     titleAr: 'عمليات الليزك، وتصحيح الأبصار، والفيمتوليزك، والألتراليزك',
@@ -133,13 +193,13 @@ export const services: ServiceData[] = [
       'إجراء عمليات استئصال الجسم الزجاجي الدقيقة (27G)',
       'استخدام غاز أو زيت السيلكون لإعادة تثبيت الشبكية',
       'إصلاح ثقوب مركز الإبصار واستعادة النظر',
-      'نسب نجاح ممتازة تحت إشراف أستاذ مساعد بقصر العيني'
+      'نسب نجاح ممتازة تحت إشراف أستاذ بقصر العيني'
     ],
     benefitsEn: [
       'Micro-incision vitrectomy surgery (27G)',
       'Use of gas or silicone oil to re-attach the retina',
       'Repairing macular holes and restoring central vision',
-      'Excellent success rates supervised by Kasr Al-Ainy Assistant Prof.'
+      'Excellent success rates supervised by Kasr Al-Ainy Professor.'
     ],
     body: [
       {

@@ -89,21 +89,9 @@ export default function AboutSection() {
               {t('about.subtitle', lang)}
             </p>
             <div className="space-y-4 mb-8 text-slate-custom text-sm md:text-base leading-relaxed">
-              <p>
-                {lang === 'ar'
-                  ? 'الأستاذ الدكتور أحمد عبدالله مهلهل هو أستاذ مساعد بكلية الطب - قصر العيني (جامعة القاهرة)، وحاصل على درجة الدكتوراه في طب وجراحة العيون. يمتلك خبرة طويلة في علاج أصعب الحالات وإجراء العمليات الدقيقة للشبكية والمياه البيضاء وتصحيح النظر.'
-                  : 'Prof. Dr. Ahmed Abdullah Mohelhel is an Assistant Professor at the Faculty of Medicine - Kasr Al-Ainy (Cairo University), and holder of MD in Ophthalmology. He has extensive experience in treating complex cases and performing micro-surgeries for retina, cataracts, and vision correction.'}
-              </p>
-              <p>
-                {lang === 'ar'
-                  ? 'يعد د. أحمد مهلهل من الكفاءات الطبية البارزة في مصر والوطن العربي، وهو عضو في كبرى الجمعيات الدولية المعنية بطب العيون مثل الأكاديمية الأمريكية لطب العيون والجمعية الأوروبية للشبكية (EURETINA).'
-                  : 'Dr. Ahmed Mohelhel is a prominent medical expert in Egypt and the Arab world, holding memberships in major international ophthalmology societies, including the American Academy of Ophthalmology and the European Society of Retina Specialists (EURETINA).'}
-              </p>
-              <p>
-                {lang === 'ar'
-                  ? 'يعمل كاستشاري معتمد بوزارة الصحة المصرية ويشرف على العيادة التخصصية للشبكية بمركز نور العيون بالهرم، ويقدم خدماته الإكلينيكية المتقدمة في فروع عياداته بالقاهرة والفيوم.'
-                  : 'He acts as a certified consultant by the Egyptian Ministry of Health, supervises the retina clinic at Nour El-Oyoun Center, and provides clinical consultations at his Cairo and Fayoum branches.'}
-              </p>
+              <p>{t('about.p1', lang)}</p>
+              <p>{t('about.p2', lang)}</p>
+              <p>{t('about.p3', lang)}</p>
             </div>
 
             {/* Micro Vision Block */}
@@ -133,9 +121,14 @@ export default function AboutSection() {
               <ul className="space-y-4">
                 {[
                   { ar: 'دكتوراة في طب وجراحة العيون – كلية الطب قصر العيني (جامعة القاهرة)', en: 'MD in Ophthalmology – Kasr Al-Ainy, Cairo University' },
-                  { ar: 'بكالوريوس طب وجراحة – جامعة القاهرة بتقدير ممتاز مع مرتبة الشرف', en: 'Bachelor of Medicine & Surgery – Cairo University (Honors)' },
-                  { ar: 'عضو الأكاديمية الأمريكية لطب العيون (AAO)', en: 'Member of the American Academy of Ophthalmology (AAO)' },
+                  { ar: 'ماجستير في طب وجراحة العيون – كلية الطب قصر العيني (جامعة القاهرة)', en: 'Master\'s Degree in Ophthalmology – Kasr Al-Ainy, Cairo University' },
+                  { ar: 'بكالوريوس طب وجراحة العيون – جامعة القاهرة بتقدير ممتاز مع مرتبة الشرف', en: 'Bachelor of Medicine & Surgery – Cairo University (Honors)' },
+                  { ar: 'زمالة المجلس الطبي العالمي لأساسيات طب العيون (FICO)', en: 'Fellowship of the International Council of Ophthalmology (FICO)' },
                   { ar: 'عضو جمعية الشبكية الأوروبية (EURETINA)', en: 'Member of the European Society of Retina Specialists (EURETINA)' },
+                  { ar: 'عضو جمعية الشبكية المصرية (EGVR)', en: 'Member of the Egyptian Vitreoretinal Society (EGVR)' },
+                  { ar: 'عضو الجمعية الرمدية المصرية (EOS)', en: 'Member of the Egyptian Ophthalmological Society (EOS)' },
+                  { ar: 'عضو المجلس الطبي العالمي لأساسيات طب العيون (ICO)', en: 'Member of the International Council of Ophthalmology (ICO)' },
+                  { ar: 'عضو الأكاديمية الأمريكية لطب العيون (AAO)', en: 'Member of the American Academy of Ophthalmology (AAO)' },
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-2.5 text-sm text-slate-custom leading-relaxed">
                     <Check size={16} className="text-medical-blue shrink-0 mt-0.5" />
@@ -157,7 +150,7 @@ export default function AboutSection() {
               </h3>
               <ul className="space-y-4">
                 {[
-                  { ar: 'أستاذ مساعد بكلية الطب – جامعة القاهرة (قصر العيني).', en: 'Assistant Professor at Faculty of Medicine – Cairo University (Kasr Al-Ainy).' },
+                  { ar: 'أستاذ بكلية الطب – جامعة القاهرة (قصر العيني).', en: 'Professor at Faculty of Medicine – Cairo University (Kasr Al-Ainy).' },
                   { ar: 'استشاري معتمد بوزارة الصحة ونقابة الأطباء المصرية.', en: 'Certified Ophthalmology Consultant by the MOH & Syndicate.' },
                   { ar: 'طبيب استشاري بمركز نور العيون التخصصي – الهرم (الشبكية والليزك).', en: 'Consultant Ophthalmologist at Nour El-Oyoun Specialized Center.' },
                   { ar: 'تدريب الأطباء المقيمين وورش العمل التخصصية بقصر العيني.', en: 'Training ophthalmology residents and holding clinical workshops at Kasr Al-Ainy.' }

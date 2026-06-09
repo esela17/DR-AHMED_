@@ -7,8 +7,10 @@ const quickLinks = [
   { key: 'nav.home', href: '#hero' },
   { key: 'nav.about', href: '#about' },
   { key: 'nav.services', href: '#services' },
+  { key: 'nav.beforeafter', href: '/before-after' },
+  { key: 'nav.faq', href: '/faq' },
+  { key: 'nav.news', href: '/news' },
   { key: 'nav.blog', href: '/blog' },
-  { key: 'nav.testimonials', href: '#testimonials' },
 ];
 
 const serviceLinks = [
@@ -117,12 +119,24 @@ export default function Footer() {
                   {lang === 'ar' ? 'عيادة الفيوم:' : 'Fayoum Clinic:'}
                 </p>
                 <p className="text-xs leading-relaxed pl-5 pr-5 mb-1">
-                  {lang === 'ar' ? 'برج الحادقة - أمام مستشفى التحرير، الفيوم' : 'El-Hadeqa Tower - In front of El-Tahrir Hospital, Fayoum'}
+                  {lang === 'ar' ? 'الفيوم، أمام مستشفى التحرير، مطلع الكوبري العلوي' : 'In front of El-Tahrir Hospital, at the entrance of the Flyover Bridge, Fayoum'}
                 </p>
                 <div className="pl-5 pr-5 flex flex-col gap-1 text-xs">
-                  <a href="tel:01159353553" className="hover:text-medical-blue transition-colors">📱 01159353553</a>
                   <a href="tel:01007513010" className="hover:text-medical-blue transition-colors">📱 01007513010</a>
-                  <a href="tel:01110505235" className="hover:text-medical-blue transition-colors">📱 01110505235</a>
+                </div>
+              </div>
+
+              {/* Sheikh Zayed Branch */}
+              <div className="space-y-1.5">
+                <p className="font-bold text-white mb-1 flex items-center gap-1.5">
+                  <MapPin size={16} className="text-medical-blue" />
+                  {lang === 'ar' ? 'عيادة الشيخ زايد (قريباً):' : 'Sheikh Zayed Clinic (Soon):'}
+                </p>
+                <p className="text-xs leading-relaxed pl-5 pr-5 mb-1">
+                  {lang === 'ar' ? 'قريباً في 205 الشيخ زايد' : 'Soon at 205 Sheikh Zayed'}
+                </p>
+                <div className="pl-5 pr-5 flex flex-col gap-1 text-xs">
+                  <a href="tel:01110505253" className="hover:text-medical-blue transition-colors">📱 01110505253</a>
                 </div>
               </div>
 

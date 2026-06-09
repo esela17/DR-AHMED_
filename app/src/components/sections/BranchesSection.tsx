@@ -19,19 +19,37 @@ const branchList = [
     landmarkEn: 'El-Ekhlas Doctors Tower',
     mobiles: ['01110505253'],
     landlines: ['02337485244'],
+    hoursAr: 'السبت، الإثنين، والثلاثاء من الساعة 5 إلى 7 مساءً',
+    hoursEn: 'Saturday, Monday, and Tuesday from 5:00 PM to 7:00 PM',
     mapUrl: 'https://www.google.com/maps?cid=12444534766943707157',
   },
   {
     id: 'c2',
     nameAr: 'عيادة الفيوم (الحادقة)',
     nameEn: 'Fayoum Clinic (El-Hadeqa)',
-    addressAr: 'برج الحادقة - أمام مستشفى التحرير، محافظة الفيوم',
-    addressEn: 'El-Hadeqa Tower - In front of El-Tahrir Hospital, Fayoum',
+    addressAr: 'الفيوم، أمام مستشفى التحرير، مطلع الكوبري العلوي',
+    addressEn: 'In front of El-Tahrir Hospital, at the entrance of the Flyover Bridge, Fayoum',
     landmarkAr: 'أمام مستشفى التحرير بالفيوم',
     landmarkEn: 'In front of El-Tahrir Hospital',
-    mobiles: ['01159353553', '01007513010', '01110505235'],
+    mobiles: ['01007513010'],
     landlines: [],
+    hoursAr: 'يرجى الاتصال للحجز المسبق والتنسيق',
+    hoursEn: 'Please call to book and coordinate in advance',
     mapUrl: 'https://www.google.com/maps/place/%D9%85%D8%B3%D8%AA%D8%B4%D9%81%D9%89+%D8%A7%D9%84%D8%AA%D8%AD%D8%B1%D9%8A%D8%B1+%D8%A8%D8%A7%D9%84%D9%81%D9%8A%D9%85%D9%85%E2%80%AD/@29.3071012,30.8507241,766m/data=!3m2!1e3!4b1!4m6!3m5!1s0x145978d7e9d1b8ff:0xdaa1ad79a655d369!8m2!3d29.3071012!4d30.8507241!16s%2Fg%2F11cmgl4qwg?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D',
+  },
+  {
+    id: 'c3',
+    nameAr: 'عيادة الشيخ زايد (قريباً)',
+    nameEn: 'Sheikh Zayed Clinic (Soon)',
+    addressAr: 'قريباً في 205 الشيخ زايد',
+    addressEn: 'Soon at 205 Sheikh Zayed',
+    landmarkAr: 'الفرع الجديد للعيادة',
+    landmarkEn: 'New Branch Coming Soon',
+    mobiles: ['01110505253'],
+    landlines: [],
+    hoursAr: 'قريباً الافتتاح وحجز المواعيد للعيادة الجديدة',
+    hoursEn: 'Grand opening and booking soon for the new clinic',
+    mapUrl: '#booking',
   },
 ];
 
@@ -113,6 +131,16 @@ export default function BranchesSection() {
                     </span>
                     <p className="text-deep-navy text-sm font-medium leading-relaxed mb-0">
                       {lang === 'ar' ? branch.addressAr : branch.addressEn}
+                    </p>
+                  </div>
+
+                  {/* Working Hours */}
+                  <div className="flex items-start gap-3">
+                    <span className="text-xs text-slate-custom font-semibold shrink-0 mt-1 block min-w-[60px]">
+                      {lang === 'ar' ? 'مواعيد العمل:' : 'Working Hours:'}
+                    </span>
+                    <p className="text-deep-navy text-sm font-semibold leading-relaxed mb-0">
+                      {lang === 'ar' ? branch.hoursAr : branch.hoursEn}
                     </p>
                   </div>
 

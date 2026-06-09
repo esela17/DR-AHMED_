@@ -15,6 +15,7 @@ export default function HeroSection() {
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ delay: 0.3 });
       tl.fromTo('.hero-badge', { opacity: 0, x: isRtl ? 20 : -20 }, { opacity: 1, x: 0, duration: 0.6, ease: 'power3.out' })
+        .fromTo('.hero-slogan', { opacity: 0, y: 15 }, { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }, '-=0.4')
         .fromTo('.hero-headline', { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 1, ease: 'power3.out' }, '-=0.3')
         .fromTo('.hero-subtitle', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }, '-=0.6')
         .fromTo('.hero-cta-1', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }, '-=0.4')
@@ -48,9 +49,13 @@ export default function HeroSection() {
         <div className="max-w-[700px] w-full">
           {/* Glassmorphism Card */}
           <div className="glassmorphism p-8 md:p-12">
-            <span className="hero-badge inline-block px-4 py-1.5 bg-soft-blue/20 text-medical-blue text-xs font-semibold rounded-full mb-5 border-r-2 border-r-warm-gold">
+            <span className="hero-badge inline-block px-4 py-1.5 bg-soft-blue/20 text-medical-blue text-xs font-semibold rounded-full mb-4 border-r-2 border-r-warm-gold">
               {t('hero.badge', lang)}
             </span>
+
+            <p className="hero-slogan text-warm-gold font-semibold text-xs md:text-sm uppercase tracking-wider mb-2">
+              {t('hero.slogan', lang)}
+            </p>
 
             <h1 className={`hero-headline ${fontClass} text-3xl md:text-5xl lg:text-[56px] font-bold text-white leading-tight lg:leading-[1.2] mb-5`}>
               {t('hero.headline', lang)}

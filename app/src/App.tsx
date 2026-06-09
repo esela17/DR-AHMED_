@@ -9,6 +9,9 @@ import HomePage from '@/pages/HomePage';
 import BlogListPage from '@/pages/BlogListPage';
 import ArticlePage from '@/pages/ArticlePage';
 import ServicePage from '@/pages/ServicePage';
+import BeforeAfterPage from '@/pages/BeforeAfterPage';
+import FAQPage from '@/pages/FAQPage';
+import NewsPage from '@/pages/NewsPage';
 import NotFoundPage from '@/pages/NotFoundPage';
 
 function App() {
@@ -23,6 +26,9 @@ function App() {
             <Route path="/blog" element={<BlogListPage />} />
             <Route path="/blog/:slug" element={<ArticlePage />} />
             <Route path="/services/:id" element={<ServicePage />} />
+            <Route path="/before-after" element={<BeforeAfterPage />} />
+            <Route path="/faq" element={<FAQPage />} />
+            <Route path="/news" element={<NewsPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
           <Footer />

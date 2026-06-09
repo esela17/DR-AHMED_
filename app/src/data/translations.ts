@@ -12,12 +12,12 @@ const translations: Record<string, TranslationValue> = {
   'nav.lang': { ar: 'EN', en: 'عربي' },
 
   // Hero
-  'hero.badge': { ar: 'أستاذ مساعد طب وجراحة العيون - قصر العيني', en: 'Assistant Professor of Ophthalmology - Kasr Al-Ainy' },
+  'hero.badge': { ar: 'أستاذ طب وجراحة العيون - قصر العيني', en: 'Professor of Ophthalmology - Kasr Al-Ainy' },
   'hero.headline': { ar: 'رؤية أوضح… وحياة أفضل تبدأ من هنا', en: 'Clearer Vision… A Better Life Starts Here' },
-  'hero.subtitle': { ar: 'أ.د. أحمد عبدالله مهلهل — أستاذ مساعد بكلية الطب جامعة القاهرة (قصر العيني)، دكتوراة طب وجراحة العيون، واستشاري جراحات المياه البيضاء والشبكية وتصحيح الإبصار.', en: 'Prof. Dr. Ahmed Abdullah Mohelhel — Assistant Professor at Cairo University (Kasr Al-Ainy), MD in Ophthalmology, and Consultant in Cataract, Retina, and Vision Correction.' },
+  'hero.subtitle': { ar: 'أ.د. أحمد عبدالله مهلهل — أستاذ بكلية الطب جامعة القاهرة (قصر العيني)، دكتوراة طب وجراحة العيون، واستشاري جراحات المياه البيضاء والشبكية وتصحيح الإبصار.', en: 'Prof. Dr. Ahmed Abdullah Mohelhel — Professor at Cairo University (Kasr Al-Ainy), MD in Ophthalmology, and Consultant in Cataract, Retina, and Vision Correction.' },
   'hero.cta.primary': { ar: 'احجز موعدك الآن', en: 'Book Appointment' },
   'hero.cta.secondary': { ar: 'استشر عبر واتساب', en: 'WhatsApp Consult' },
-  'hero.stat1.num': { ar: '٢٠+', en: '20+' },
+  'hero.stat1.num': { ar: '٢٧+', en: '27+' },
   'hero.stat1.label': { ar: 'عام خبرة', en: 'Years Exp' },
   'hero.stat2.num': { ar: '١٥,٠٠٠+', en: '15,000+' },
   'hero.stat2.label': { ar: 'مريض سعيد', en: 'Happy Patients' },
@@ -28,6 +28,7 @@ const translations: Record<string, TranslationValue> = {
   'hero.widget.date': { ar: 'اختر التاريخ', en: 'Select Date' },
   'hero.widget.submit': { ar: 'احجز الآن', en: 'Book' },
   'hero.mouse': { ar: 'حرك الماوس لتفاعل', en: 'Move mouse to interact' },
+  'hero.slogan': { ar: 'استعادة الإبصار بجودة عالية هو غايتنا', en: 'Top quality vision is our ultimate mission' },
 
   // Trust Bar
   'trust.exp.label': { ar: 'عام من الخبرة', en: 'Years of Experience' },
@@ -38,15 +39,15 @@ const translations: Record<string, TranslationValue> = {
   // About
   'about.badge': { ar: 'عن الدكتور', en: 'About the Doctor' },
   'about.headline': { ar: 'أ.د. أحمد عبدالله مهلهل… علمٌ وخبرة لرعاية عينيك بأعلى معايير الإنسانية والدقة', en: 'Prof. Dr. Ahmed Abdullah Mohelhel… Knowledge & Experience for Eye Care with the Highest Human Standards & Precision' },
-  'about.subtitle': { ar: 'أستاذ مساعد طب وجراحة العيون — دكتوراة طب وجراحة العيون (جامعة القاهرة)', en: 'Assistant Professor of Ophthalmology — MD in Ophthalmology (Cairo University)' },
-  'about.p1': { ar: 'الأستاذ الدكتور أحمد عبدالله مهلهل هو أستاذ مساعد بكلية الطب - قصر العيني (جامعة القاهرة)، وحاصل على دكتوراة طب العين وجراحتها. يمتلك مسيرة علمية وعملية طويلة جعلته أحد أبرز الكفاءات الاستشارية في جراحات الشبكية، الجسم الزجاجي، المياه البيضاء، وتصحيح عيوب انكسار العين (الليزك والفيمتوليزك).', en: 'Prof. Dr. Ahmed Abdullah Mohelhel is an Assistant Professor at the Faculty of Medicine - Kasr Al-Ainy (Cairo University), and holder of MD in Ophthalmology. He has a long academic and clinical career that has made him one of the most prominent consulting expert in vitreoretinal, cataract, and refractive surgeries (LASIK & Femto-LASIK).' },
-  'about.p2': { ar: 'إلى جانب عمله الأكاديمي بجامعة القاهرة، يشغل منصب طبيب استشاري بمركز نور العيون التخصصي بالهرم، واستشاري طب وجراحة العيون المعتمد من وزارة الصحة المصرية. يلتزم أ.د. أحمد مهلهل بمواكبة أحدث الأبحاث العلمية والتقنيات العلاجية العالمية لضمان سلامة المرضى وراحتهم.', en: 'Alongside his academic work at Cairo University, he serves as a Consultant Ophthalmologist at Nour El-Oyoun Specialized Center in Haram, and is a certified consultant by the Egyptian Ministry of Health. Prof. Dr. Ahmed Mohelhel is committed to following the latest international scientific research and therapeutic techniques to ensure patient safety and comfort.' },
-  'about.p3': { ar: 'تتميز عياداتنا بتقديم رعاية طبية متكاملة لجميع الفئات وتأهيل الإبصار بأحدث الوسائل، حيث لا تقتصر الخدمة على التشخيص والعلاج فقط بل تمتد للمتابعة الدورية والنصائح الطبية الوقائية.', en: 'Our clinics feature comprehensive medical care for all groups, and vision rehabilitation using the latest tools. Services are not limited to diagnosis and treatment, but extend to regular follow-ups and preventive medical advice.' },
+  'about.subtitle': { ar: 'أستاذ طب وجراحة العيون — دكتوراة طب وجراحة العيون (جامعة القاهرة)', en: 'Professor of Ophthalmology — MD in Ophthalmology (Cairo University)' },
+  'about.p1': { ar: 'د. أحمد عبدالله أستاذ طب وجراحة العيون بجامعة القاهرة، يمتلك ما يقرب من ثلاثين عاماً من الخبرة في مختلف جراحات طب وجراحة العيون وتدريب صغار الأطباء.', en: 'Dr. Ahmed Abdullah is a Professor of Ophthalmology at Cairo University, possessing nearly thirty years of experience in various ophthalmic surgeries and training young doctors.' },
+  'about.p2': { ar: 'إلى جانب عمله الأكاديمي بجامعة القاهرة (قصر العيني)، يشغل منصب طبيب استشاري بمركز نور العيون التخصصي بالهرم، واستشاري طب وجراحة العيون المعتمد من وزارة الصحة المصرية. يلتزم أ.د. أحمد مهلهل بمواكبة أحدث الأبحاث العلمية والتقنيات العلاجية العالمية لضمان سلامة المرضى وراحتهم.', en: 'Alongside his academic work at Cairo University (Kasr Al-Ainy), he serves as a Consultant Ophthalmologist at Nour El-Oyoun Specialized Center in Haram, and is a certified consultant by the Egyptian Ministry of Health. Prof. Dr. Ahmed Mohelhel is committed to following the latest international scientific research and therapeutic techniques to ensure patient safety and comfort.' },
+  'about.p3': { ar: 'تتميز عياداتنا بتقديم رعاية طبية متكاملة لجميع الفئات وتأهيل الإبصار بأحدث الوسائل، حيث لا تقتصر الخدمة على التشخيص والعلاج فقط بل تمتد للمتابعة الدورية والنصائح الطبية الوقائية معتمدين على أمانة تشخيص الحالة بدقة وتاريخنا الطويل في التعامل مع الحالات المعقدة.', en: 'Our clinics feature comprehensive medical care for all groups, and vision rehabilitation using the latest tools. Services are not limited to diagnosis and treatment, but extend to regular follow-ups and preventive medical advice, based on honest diagnosis and our long history in handling complex cases.' },
   'about.cred1': { ar: 'عضو الأكاديمية الأمريكية لطب العيون (AAO)', en: 'Member of the American Academy of Ophthalmology (AAO)' },
   'about.cred2': { ar: 'عضو جمعية الشبكية الأوروبية (EURETINA)', en: 'Member of the European Society of Retina (EURETINA)' },
-  'about.cred3': { ar: 'أستاذ مساعد بطب قصر العيني', en: 'Assistant Professor at Kasr Al-Ainy' },
+  'about.cred3': { ar: 'أستاذ بطب قصر العيني', en: 'Professor at Kasr Al-Ainy' },
   'about.vision.title': { ar: 'رؤيتنا ورسالتنا', en: 'Our Vision & Mission' },
-  'about.vision.text': { ar: 'أن نكون الوجهة الأولى والآمنة لمرضى العيون في مصر والعالم العربي، بتقديم تشخيصات فائقة الدقة وجراحات ناجحة تعيد الأمل والوضوح للرؤية بأسلوب إنساني يحترم المريض.', en: 'To be the premier and safest destination for eye patients in Egypt and the Arab world, providing ultra-precise diagnoses and successful surgeries that restore hope and clarity of vision in a humane way.' },
+  'about.vision.text': { ar: 'استعادة الإبصار بجودة عالية هو غايتنا، حيث نؤمن بحق المريض في معرفة حالته بدقة وأمانة، والتعامل مع أصعب الحالات المعقدة بناءً على خبرتنا الطويلة الممتدة لأكثر من 27 عاماً.', en: 'Restoring high-quality vision is our ultimate mission. We believe in the patient\'s right to know their condition accurately and honestly, handling complex cases based on our extensive experience of over 27 years.' },
   'about.cta': { ar: 'تعرف أكثر على الدكتور', en: 'Learn More About the Doctor' },
   'about.card.degree': { ar: 'دكتوراة طب وجراحة العيون', en: 'MD in Ophthalmology' },
   'about.card.university': { ar: 'جامعة القاهرة (قصر العيني)', en: 'Cairo University (Kasr Al-Ainy)' },
@@ -123,7 +124,7 @@ const translations: Record<string, TranslationValue> = {
   'media.watch': { ar: 'شاهد الفيديو', en: 'Watch Video' },
 
   // Footer
-  'footer.tagline': { ar: 'أستاذ مساعد طب وجراحة العيون بجامعة القاهرة. رعاية فائقة لعيونك بأحدث الأجهزة والتقنيات.', en: 'Assistant Professor of Ophthalmology at Cairo University. Exceptional care for your eyes using the latest tech.' },
+  'footer.tagline': { ar: 'أستاذ طب وجراحة العيون بجامعة القاهرة. رعاية فائقة لعيونك بأحدث الأجهزة والتقنيات.', en: 'Professor of Ophthalmology at Cairo University. Exceptional care for your eyes using the latest tech.' },
   'footer.quickLinks': { ar: 'روابط سريعة', en: 'Quick Links' },
   'footer.services': { ar: 'أبرز الخدمات', en: 'Main Services' },
   'footer.contact': { ar: 'اتصل بنا', en: 'Contact Us' },
@@ -186,6 +187,19 @@ const translations: Record<string, TranslationValue> = {
   // Validation
   'validation.required': { ar: 'هذا الحقل مطلوب', en: 'This field is required' },
   'validation.phone': { ar: 'رقم هاتف غير صحيح', en: 'Invalid phone number' },
+
+  // New routes & items
+  'nav.beforeafter': { ar: 'معرض قبل وبعد', en: 'Before & After' },
+  'nav.faq': { ar: 'الأسئلة الشائعة', en: 'FAQ' },
+  'nav.news': { ar: 'أخبار وإنجازات', en: 'News & Achievements' },
+
+  // Booking details
+  'booking.form.type': { ar: 'نوع الحجز', en: 'Appointment Type' },
+  'booking.form.type.exam': { ar: 'كشف في العيادة (من 10 إلى 15 دقيقة)', en: 'Clinic Examination (10-15 mins)' },
+  'booking.form.type.followup': { ar: 'متابعة دورية', en: 'Regular Follow-up' },
+  'booking.form.type.procedure': { ar: 'حجز إجراء أو عملية جراحية', en: 'Procedure / Surgery Booking' },
+  'booking.form.payment.warning': { ar: '⚠️ يرجى العلم أن الدفع يتم نقداً فقط في العيادة', en: '⚠️ Please note that payment is cash-only at the clinic' },
+  'booking.form.branch.c3': { ar: 'فرع الشيخ زايد (قريباً)', en: 'Sheikh Zayed Branch (Soon)' },
 };
 
 export function t(key: string, lang: 'ar' | 'en'): string {

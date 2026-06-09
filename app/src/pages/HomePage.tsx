@@ -14,14 +14,14 @@ export default function HomePage() {
 
   useSEO({
     title: lang === 'ar' 
-      ? 'أ.د. أحمد عبدالله مهلهل | أستاذ مساعد طب وجراحة العيون قصر العيني' 
-      : 'Prof. Dr. Ahmed Abdullah Mohelhel | Assistant Professor of Ophthalmology',
+      ? 'أ.د. أحمد عبدالله مهلهل | أستاذ طب وجراحة العيون قصر العيني' 
+      : 'Prof. Dr. Ahmed Abdullah Mohelhel | Professor of Ophthalmology',
     description: lang === 'ar'
-      ? 'أ.د. أحمد عبدالله مهلهل – استشاري طب وجراحة العيون (قصر العيني) ومتخصص في الشبكية والمياه البيضاء والليزك وتصحيح الإبصار. احجز موعدك الآن بالدقي والفيوم.'
-      : 'Prof. Dr. Ahmed Abdullah Mohelhel – Ophthalmology Consultant (Kasr Al-Ainy) specializing in retina, cataracts, and LASIK with clinics in Dokki & Fayoum.',
+      ? 'أ.د. أحمد عبدالله مهلهل – أستاذ طب وجراحة العيون بجامعة القاهرة (قصر العيني) واستشاري جراحات الشبكية والمياه البيضاء وتصحيح الإبصار بخبرة 27+ عاماً. احجز موعدك الآن بالدقي والفيوم والشيخ زايد.'
+      : 'Prof. Dr. Ahmed Abdullah Mohelhel – Ophthalmology Professor (Kasr Al-Ainy) and Consultant specializing in retina, cataracts, and LASIK with 27+ years experience. Book in Dokki, Fayoum & Sheikh Zayed.',
     keywords: lang === 'ar'
-      ? 'دكتور عيون متخصص, استشاري شبكية, جراحة المياه البيضاء, دكتور ليزك الدقي, عيادة عيون الفيوم, تصحيح البصر بالليزر, افضل دكتور عيون, أحمد عبدالله مهلهل, قصر العيني'
-      : 'ophthalmologist Cairo, retina consultant, cataract surgery Egypt, LASIK doctor Dokki, Fayoum eye clinic, vision correction, best eye doctor Egypt, Ahmed Mohelhel',
+      ? 'دكتور عيون متخصص, أستاذ طب العيون, استشاري شبكية, جراحة المياه البيضاء, دكتور ليزك الدقي, عيادة عيون الفيوم, عيادة الشيخ زايد, تصحيح البصر بالليزر, أفضل دكتور عيون بمصر, أحمد عبدالله مهلهل, قصر العيني'
+      : 'ophthalmologist Cairo, ophthalmology professor, retina consultant, cataract surgery Egypt, LASIK doctor Dokki, Fayoum eye clinic, Sheikh Zayed eye clinic, vision correction, best eye doctor Egypt, Ahmed Mohelhel',
     lang
   });
   return (

@@ -14,16 +14,17 @@ export default function BookingForm({ compact = false, lang }: Props) {
     phone: '',
     service: '',
     branch: '',
+    appointmentType: '',
     date: '',
     timeSlot: '',
     notes: '',
   });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [status, setStatus] = useState<'idle' | 'loading' | 'success'>('idle');
-
+ 
   const today = new Date().toISOString().split('T')[0];
   const maxDate = new Date(Date.now() + 90 * 86400000).toISOString().split('T')[0];
-
+ 
   const validate = () => {
     const errs: Record<string, string> = {};
     if (!formData.name.trim()) errs.name = t('validation.required', lang);
@@ -31,6 +32,7 @@ export default function BookingForm({ compact = false, lang }: Props) {
     else if (!/^01[0-2,5]\d{8}$/.test(formData.phone)) errs.phone = t('validation.phone', lang);
     if (!formData.service) errs.service = t('validation.required', lang);
     if (!formData.branch) errs.branch = t('validation.required', lang);
+    if (!formData.appointmentType) errs.appointmentType = t('validation.required', lang);
     setErrors(errs);
     return Object.keys(errs).length === 0;
   };
@@ -57,8 +59,9 @@ export default function BookingForm({ compact = false, lang }: Props) {
         },
         body: JSON.stringify({
           ...formData,
-          branchName: formData.branch === 'c1' ? 'عيادة الدقي (القاهرة)' : 'عيادة الفيوم',
+          branchName: formData.branch === 'c1' ? 'عيادة الدقي' : formData.branch === 'c2' ? 'عيادة الفيوم' : 'عيادة الشيخ زايد (قريباً)',
           serviceName: services.find(s => s.id === formData.service)?.titleAr || formData.service,
+          appointmentTypeName: formData.appointmentType === 'exam' ? 'كشف في العيادة' : formData.appointmentType === 'followup' ? 'متابعة دورية' : 'حجز إجراء أو عملية',
           dateCreated: new Date().toLocaleString('ar-EG'),
         }),
       });
@@ -85,6 +88,7 @@ export default function BookingForm({ compact = false, lang }: Props) {
           <option value="">{t('booking.form.branch', lang)}</option>
           <option value="c1">{t('booking.form.branch.c1', lang)}</option>
           <option value="c2">{t('booking.form.branch.c2', lang)}</option>
+          <option value="c3">{t('booking.form.branch.c3', lang)}</option>
         </select>
         {errors.branch && <p className={errorClass}>{errors.branch}</p>}
         <select value={formData.service} onChange={e => update('service', e.target.value)} className={inputClass}>
@@ -124,14 +128,24 @@ export default function BookingForm({ compact = false, lang }: Props) {
             <input type="tel" placeholder={t('booking.form.phonePlaceholder', lang)} value={formData.phone} onChange={e => update('phone', e.target.value)} className={`${inputClass} pl-24`} />
             {errors.phone && <p className={errorClass}>{errors.phone}</p>}
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <div>
               <select value={formData.branch} onChange={e => update('branch', e.target.value)} className={inputClass}>
                 <option value="">{t('booking.form.branch', lang)}</option>
                 <option value="c1">{t('booking.form.branch.c1', lang)}</option>
                 <option value="c2">{t('booking.form.branch.c2', lang)}</option>
+                <option value="c3">{t('booking.form.branch.c3', lang)}</option>
               </select>
               {errors.branch && <p className={errorClass}>{errors.branch}</p>}
+            </div>
+            <div>
+              <select value={formData.appointmentType} onChange={e => update('appointmentType', e.target.value)} className={inputClass}>
+                <option value="">{t('booking.form.type', lang)}</option>
+                <option value="exam">{t('booking.form.type.exam', lang)}</option>
+                <option value="followup">{t('booking.form.type.followup', lang)}</option>
+                <option value="procedure">{t('booking.form.type.procedure', lang)}</option>
+              </select>
+              {errors.appointmentType && <p className={errorClass}>{errors.appointmentType}</p>}
             </div>
             <div>
               <select value={formData.service} onChange={e => update('service', e.target.value)} className={inputClass}>
@@ -151,6 +165,12 @@ export default function BookingForm({ compact = false, lang }: Props) {
             </select>
           </div>
           <textarea rows={3} placeholder={t('booking.form.notesPlaceholder', lang)} value={formData.notes} onChange={e => update('notes', e.target.value)} className={`${inputClass} resize-y`} />
+          
+          {/* Cash Payment Warning */}
+          <div className="text-center bg-[#F8FAFC] p-3 rounded-xl border border-divider text-xs font-semibold text-warm-gold">
+            {t('booking.form.payment.warning', lang)}
+          </div>
+
           {errors.submit && <p className="text-red-500 text-sm font-semibold text-center mt-2">{errors.submit}</p>}
           <button type="submit" disabled={status === 'loading'} className="w-full py-4 bg-medical-blue text-white font-semibold rounded-xl hover:bg-electric-blue transition-all duration-300 hover:-translate-y-0.5 hover:shadow-cta disabled:opacity-70 flex items-center justify-center gap-2">
             {status === 'loading' ? <><Loader2 size={18} className="animate-spin" /> {t('booking.form.loading', lang)}</> : t('booking.form.submit', lang)}

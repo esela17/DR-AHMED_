@@ -10,7 +10,9 @@ const navLinks = [
   { key: 'nav.home', href: '#hero' },
   { key: 'nav.about', href: '#about' },
   { key: 'nav.services', href: '#services' },
-  { key: 'nav.testimonials', href: '#testimonials' },
+  { key: 'nav.beforeafter', href: '/before-after' },
+  { key: 'nav.faq', href: '/faq' },
+  { key: 'nav.news', href: '/news' },
   { key: 'nav.blog', href: '/blog' },
   { key: 'nav.contact', href: '#booking' },
 ];
