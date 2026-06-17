@@ -1,0 +1,12 @@
+{
+  "buildCommand": "npm run build",
+  "outputDirectory": "app/dist",
+  "installCommand": "npm ci",
+  "framework": "vite",
+  "rewrites": [
+    {
+      "source": "/((?!assets/|images/|.*\\..*$).*)",
+      "destination": "/index.html"
+    }
+  ]
+}
