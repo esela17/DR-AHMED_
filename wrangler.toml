@@ -1,0 +1,5 @@
+name = "dr-ahmed"
+pages_build_output_dir = "app/dist"
+
+[build]
+command = "cd app && npm ci && npm run build"
