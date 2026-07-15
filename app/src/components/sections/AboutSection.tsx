@@ -125,7 +125,7 @@ export default function AboutSection() {
                   { ar: 'بكالوريوس طب وجراحة العيون – جامعة القاهرة بتقدير ممتاز مع مرتبة الشرف', en: 'Bachelor of Medicine & Surgery – Cairo University (Honors)' },
                   { ar: 'زمالة المجلس الطبي العالمي لأساسيات طب العيون (FICO)', en: 'Fellowship of the International Council of Ophthalmology (FICO)' },
                   { ar: 'عضو جمعية الشبكية الأوروبية (EURETINA)', en: 'Member of the European Society of Retina Specialists (EURETINA)' },
-                  { ar: 'عضو جمعية الشبكية المصرية (EGVR)', en: 'Member of the Egyptian Vitreoretinal Society (EGVR)' },
+                  { ar: 'عضو الجمعية الشبكية المصرية (EGVRS)', en: 'Member of the Egyptian Vitreoretinal Society (EGVRS)' },
                   { ar: 'عضو الجمعية الرمدية المصرية (EOS)', en: 'Member of the Egyptian Ophthalmological Society (EOS)' },
                   { ar: 'عضو المجلس الطبي العالمي لأساسيات طب العيون (ICO)', en: 'Member of the International Council of Ophthalmology (ICO)' },
                   { ar: 'عضو الأكاديمية الأمريكية لطب العيون (AAO)', en: 'Member of the American Academy of Ophthalmology (AAO)' },
@@ -151,6 +151,7 @@ export default function AboutSection() {
               <ul className="space-y-4">
                 {[
                   { ar: 'أستاذ بكلية الطب – جامعة القاهرة (قصر العيني).', en: 'Professor at Faculty of Medicine – Cairo University (Kasr Al-Ainy).' },
+                  { ar: 'استشاري طب وجراحة العيون وجراحة الشبكية لدى مستشفى العيون الدولي.', en: 'Consultant of Ophthalmology and Vitreoretinal Surgery at International Eye Hospital.' },
                   { ar: 'استشاري معتمد بوزارة الصحة ونقابة الأطباء المصرية.', en: 'Certified Ophthalmology Consultant by the MOH & Syndicate.' },
                   { ar: 'طبيب استشاري بمركز نور العيون التخصصي – الهرم (الشبكية والليزك).', en: 'Consultant Ophthalmologist at Nour El-Oyoun Specialized Center.' },
                   { ar: 'تدريب الأطباء المقيمين وورش العمل التخصصية بقصر العيني.', en: 'Training ophthalmology residents and holding clinical workshops at Kasr Al-Ainy.' }

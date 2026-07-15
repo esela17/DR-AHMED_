@@ -76,11 +76,10 @@ export default function HeroSection() {
             </div>
 
             {/* Trust Stats */}
-            <div className="border-t border-white/15 pt-6 grid grid-cols-3 gap-4">
+            <div className="border-t border-white/15 pt-6 grid grid-cols-2 gap-6 max-w-[360px]">
               {[
                 { num: t('hero.stat1.num', lang), label: t('hero.stat1.label', lang) },
                 { num: t('hero.stat2.num', lang), label: t('hero.stat2.label', lang) },
-                { num: t('hero.stat3.num', lang), label: t('hero.stat3.label', lang) },
               ].map((stat, i) => (
                 <div key={i} className="hero-stat text-center">
                   <div className="text-white text-2xl md:text-4xl font-bold leading-none">{stat.num}</div>

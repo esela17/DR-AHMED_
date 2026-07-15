@@ -54,9 +54,9 @@ export default function TrustBarSection() {
     <section ref={sectionRef} className="relative bg-deep-navy py-16">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent to-deep-navy pointer-events-none" />
       <div className="content-container relative">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4">
+        <div className="grid grid-cols-2 gap-8 lg:gap-16 max-w-3xl mx-auto">
           {stats.map((stat, i) => (
-            <div key={stat.id} className={`trust-item flex flex-col items-center text-center ${i < stats.length - 1 ? 'lg:border-r lg:border-white/10' : ''}`}>
+            <div key={stat.id} className={`trust-item flex flex-col items-center text-center ${i < stats.length - 1 ? 'border-r border-white/10' : ''}`}>
               <div className="text-warm-gold mb-3 animate-float" style={{ animationDelay: `${i * 0.5}s` }}>
                 {iconMap[stat.icon]}
               </div>
