@@ -44,7 +44,7 @@ const videoList: VideoItem[] = [
     descAr: 'فيديو قصير (شورتس) للتعريف بالأستاذ الدكتور أحمد عبدالله مهلهل كاستشاري للشبكية وتصحيح الإبصار بالمركز.',
     descEn: 'A short promo clip introducing Prof. Dr. Ahmed Abdullah Mohelhel as a key retinal and refractive consultant.',
     icon: <Play size={20} className="text-warm-gold" />,
-    aspectRatio: 'aspect-[9/16] max-w-[280px] mx-auto',
+    aspectRatio: 'aspect-video',
   },
   {
     id: 3,
