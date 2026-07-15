@@ -4,7 +4,7 @@ import { defineConfig } from "vite"
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: process.env.NODE_ENV === 'production' ? '/DR-AHMED_/' : '/',
+  base: process.env.VITE_BASE_PATH !== undefined ? process.env.VITE_BASE_PATH : (process.env.NODE_ENV === 'production' ? '/DR-AHMED_/' : '/'),
   plugins: [react()],
   server: {
     port: 3000,

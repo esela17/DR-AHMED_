@@ -37,23 +37,28 @@ jobs:
         run: npm ci
         working-directory: ./app
 
-      - name: Build project
+      - name: Build project for GitHub Pages
         run: npm run build
         working-directory: ./app
         env:
           NODE_ENV: production
+          VITE_BASE_PATH: /DR-AHMED_/
 
       - name: Copy index.html to 404.html for GitHub Pages routing
         run: cp dist/index.html dist/404.html
         working-directory: ./app
 
-      - name: Debug Output
-        run: ls -la ./app/dist
+      - name: Build project for Cloudflare Pages
+        run: npx vite build --outDir dist-cloudflare
+        working-directory: ./app
+        env:
+          NODE_ENV: production
+          VITE_BASE_PATH: /
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
-      - name: Upload artifact
+      - name: Upload artifact for GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
           path: './app/dist'
@@ -61,8 +66,8 @@ jobs:
       - name: Upload dist for Cloudflare job
         uses: actions/upload-artifact@v4
         with:
-          name: dist
-          path: ./app/dist
+          name: dist-cloudflare
+          path: ./app/dist-cloudflare
 
   deploy-github:
     name: Deploy to GitHub Pages
@@ -87,8 +92,8 @@ jobs:
       - name: Download dist artifact
         uses: actions/download-artifact@v4
         with:
-          name: dist
-          path: ./dist
+          name: dist-cloudflare
+          path: ./dist-cloudflare
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/pages-action@v1
@@ -96,5 +101,5 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           projectName: dr-ahmed-abdallah
-          directory: ./dist
+          directory: ./dist-cloudflare
           gitHubToken: ${{ secrets.GITHUB_TOKEN }}
