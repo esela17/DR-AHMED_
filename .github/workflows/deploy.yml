@@ -1,4 +1,4 @@
-name: 🚀 Deploy to GitHub Pages
+name: 🚀 Deploy to GitHub Pages & Cloudflare Pages
 
 on:
   push:
@@ -58,8 +58,14 @@ jobs:
         with:
           path: './app/dist'
 
-  deploy:
-    name: Deploy
+      - name: Upload dist for Cloudflare job
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: ./app/dist
+
+  deploy-github:
+    name: Deploy to GitHub Pages
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -69,3 +75,26 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  deploy-cloudflare:
+    name: Deploy to Cloudflare Pages
+    runs-on: ubuntu-latest
+    needs: build
+    permissions:
+      contents: read
+      deployments: write
+    steps:
+      - name: Download dist artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: ./dist
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: dr-ahmed-abdallah
+          directory: ./dist
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
