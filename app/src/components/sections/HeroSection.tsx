@@ -37,7 +37,7 @@ export default function HeroSection() {
         <img 
           src={getAssetUrl('/images/cov-doc.png')} 
           alt={lang === 'ar' ? 'عيادة أ.د. أحمد عبدالله مهلهل' : 'Prof. Dr. Ahmed Abdullah Mohelhel Clinic'} 
-          className="w-full h-full object-cover object-center lg:object-right"
+          className="w-full h-full object-cover object-top"
           loading="eager"
         />
         {/* Subtle overlay to ensure high readability of text */}
@@ -66,7 +66,7 @@ export default function HeroSection() {
             </p>
 
             <div className="flex flex-wrap gap-4 mb-8">
-              <a href="#booking" className="hero-cta-1 inline-flex items-center px-8 py-3.5 bg-medical-blue text-white text-sm font-semibold rounded-xl hover:bg-electric-blue transition-all duration-300 hover:-translate-y-0.5 hover:shadow-cta">
+              <a href="https://wa.me/201110505253?text=%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A7%D8%AD%D8%AC%D8%B2%20%D8%A7%D9%84%D8%A7%D9%86" target="_blank" rel="noopener noreferrer" className="hero-cta-1 inline-flex items-center px-8 py-3.5 bg-medical-blue text-white text-sm font-semibold rounded-xl hover:bg-electric-blue transition-all duration-300 hover:-translate-y-0.5 hover:shadow-cta">
                 {t('hero.cta.primary', lang)}
               </a>
               <a href="https://wa.me/201110505253" target="_blank" rel="noopener noreferrer" className="hero-cta-2 inline-flex items-center gap-2 px-8 py-3.5 border-[1.5px] border-white/40 text-white text-sm font-semibold rounded-xl hover:bg-white/10 hover:border-white/70 transition-all duration-300">

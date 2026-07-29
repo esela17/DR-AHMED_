@@ -7,7 +7,6 @@ import ServicesSection from '@/components/sections/ServicesSection';
 import MediaSection from '@/components/sections/MediaSection';
 import TestimonialsSection from '@/components/sections/TestimonialsSection';
 import BranchesSection from '@/components/sections/BranchesSection';
-import BookingSection from '@/components/sections/BookingSection';
 
 export default function HomePage() {
   const { lang } = useLanguage();
@@ -33,7 +32,6 @@ export default function HomePage() {
       <MediaSection />
       <TestimonialsSection />
       <BranchesSection />
-      <BookingSection />
     </main>
   );
 }

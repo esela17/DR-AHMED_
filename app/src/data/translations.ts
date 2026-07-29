@@ -20,7 +20,7 @@ const translations: Record<string, TranslationValue> = {
   'hero.cta.secondary': { ar: 'استشر عبر واتساب', en: 'WhatsApp Consult' },
   'hero.stat1.num': { ar: '٢٧+', en: '27+' },
   'hero.stat1.label': { ar: 'عام خبرة', en: 'Years Exp' },
-  'hero.stat2.num': { ar: '١٥,٠٠٠+', en: '15,000+' },
+  'hero.stat2.num': { ar: '٢٥,٠٠٠+', en: '25,000+' },
   'hero.stat2.label': { ar: 'مريض سعيد', en: 'Happy Patients' },
   'hero.stat3.num': { ar: '٩٩٪', en: '99%' },
   'hero.stat3.label': { ar: 'نسبة نجاح', en: 'Success Rate' },

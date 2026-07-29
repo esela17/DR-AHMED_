@@ -1,26 +1,44 @@
 import { useLanguage } from '@/context/LanguageContext';
-import { t } from '@/data/translations';
 import { MessageCircle } from 'lucide-react';
 
 export default function WhatsAppButton() {
-  const { lang, dir } = useLanguage();
-  const isRtl = dir === 'rtl';
+  const { lang } = useLanguage();
 
   return (
-    <div className={`fixed bottom-24 z-[999] group ${isRtl ? 'left-6' : 'right-6'}`}>
-      <a
-        href="https://wa.me/201001234567"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="relative w-14 h-14 rounded-full bg-trust-green flex items-center justify-center text-white shadow-lg hover:scale-110 transition-transform duration-300"
-        aria-label="WhatsApp"
-      >
-        <span className="absolute inset-0 rounded-full bg-trust-green animate-pulse-ring" />
-        <MessageCircle size={24} className="relative z-10" />
-      </a>
-      <span className={`absolute ${isRtl ? 'left-full ml-3' : 'right-full mr-3'} top-1/2 -translate-y-1/2 px-3 py-1.5 bg-deep-navy text-white text-xs font-medium rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none`}>
-        {t('float.whatsapp', lang)}
-      </span>
+    <div className="fixed bottom-8 left-6 z-[999] flex flex-col gap-6">
+      {/* Dokki WhatsApp */}
+      <div className="group relative">
+        <a
+          href="https://wa.me/201110505253?text=%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A7%D8%AD%D8%AC%D8%B2%20%D8%A7%D9%84%D8%A7%D9%86"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="relative w-16 h-16 rounded-full bg-trust-green flex items-center justify-center text-white shadow-xl hover:scale-110 transition-transform duration-300"
+          aria-label="WhatsApp Dokki"
+        >
+          <span className="absolute inset-0 rounded-full bg-trust-green animate-pulse-ring" />
+          <MessageCircle size={32} className="relative z-10" />
+        </a>
+        <span className="absolute left-full ml-4 top-1/2 -translate-y-1/2 px-4 py-2 bg-deep-navy text-white text-sm font-bold rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none shadow-lg">
+          {lang === 'ar' ? 'حجز الدقي' : 'Dokki Booking'}
+        </span>
+      </div>
+
+      {/* Fayoum WhatsApp */}
+      <div className="group relative">
+        <a
+          href="https://wa.me/201007513010?text=%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A7%D8%AD%D8%AC%D8%B2%20%D8%A7%D9%84%D8%A7%D9%86"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="relative w-16 h-16 rounded-full bg-trust-green flex items-center justify-center text-white shadow-xl hover:scale-110 transition-transform duration-300"
+          aria-label="WhatsApp Fayoum"
+        >
+          <span className="absolute inset-0 rounded-full bg-trust-green animate-pulse-ring" />
+          <MessageCircle size={32} className="relative z-10" />
+        </a>
+        <span className="absolute left-full ml-4 top-1/2 -translate-y-1/2 px-4 py-2 bg-deep-navy text-white text-sm font-bold rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none shadow-lg">
+          {lang === 'ar' ? 'حجز الفيوم' : 'Fayoum Booking'}
+        </span>
+      </div>
     </div>
   );
 }

@@ -246,7 +246,7 @@ export const services: ServiceData[] = [
     descAr: 'تشخيص دقيق وعلاجات متكاملة للحد من تأثير السكري على العين، بما في ذلك علاج الرشح السكري وعقد جلسات ليزر الشبكية الوقائي.',
     descEn: 'Precise diagnosis and integrated treatments to limit the impact of diabetes on the eye, including diabetic macular edema therapy and protective retinal laser sessions.',
     benefitsAr: [
-      'فحص قاع العين والماكولا بجهاز التصوير الطبقي OCT',
+      'فحص قاع العين والماكولا',
       'حقن المواد الدوائية الحديثة لوقف ارتشاح مركز الإبصار',
       'استخدام الليزر الضوئي الأرجون لتثبيت الأوعية الدموية',
       'تجنب التدهور البصري والمحافظة على سلامة النظر'
@@ -274,8 +274,8 @@ export const services: ServiceData[] = [
         contentEn: '',
         items: [
           {
-            contentAr: 'التصوير الطبقي للشبكية (OCT): جهاز عالي الدقة يصور طبقات مركز الإبصار بالميكرون لقياس مدى سماكة الارتشاح وتحديد خطة العلاج بدقة.',
-            contentEn: 'Optical Coherence Tomography (OCT): A micro-precision device that scans retinal layers to measure edema thickness and plan therapy.'
+            contentAr: 'فحص قاع العين: تقييم دقيق لمركز الإبصار والشبكية لقياس مدى سماكة الارتشاح وتحديد خطة العلاج بدقة.',
+            contentEn: 'Fundus Examination: A detailed evaluation of the macula and retina to measure edema thickness and plan therapy.'
           },
           {
             contentAr: 'الحقن داخل العين (Anti-VEGF): حقن مواد دوائية متطورة تعمل على تثبيط نمو الأوعية الدموية غير الطبيعية وامتصاص الارتشاح بسرعة وأمان.',
@@ -349,7 +349,7 @@ export const services: ServiceData[] = [
     descAr: 'تشخيص ومتابعة حالات ضمور مركز الإبصار المرتبط بتقدم العمر (النوع الجاف والرطب) وتقديم بروتوكول الحقن العلاجي.',
     descEn: 'Diagnosis and follow-up of age-related macular degeneration (Dry and Wet AMD) and providing advanced therapeutic injection protocols.',
     benefitsAr: [
-      'تشخيص دقيق باستخدام الأشعة والصبغات المتطورة وOCT',
+      'تشخيص دقيق باستخدام الأشعة والصبغات المتطورة وفحص قاع العين',
       'الحقن الدوري للنوع الرطب للسيطرة على تدهور النظر',
       'إعطاء المكملات الغذائية والفيتامينات للنوع الجاف',
       'إرشادات وقائية ونمط حياة لحماية الخلايا البصرية'
@@ -472,53 +472,7 @@ export const services: ServiceData[] = [
       }
     ]
   },
-  {
-    id: 'eyelid-plastic',
-    icon: 'Search',
-    titleAr: 'جراحة تجميل الجفون وشد الجفون بالخيوط',
-    titleEn: 'Eyelid Blepharoplasty & Thread Lift',
-    descAr: 'علاج ترهلات الجفون، إزالة الأكياس الدهنية المنتفخة حول العين، وشد الجفون التجميلي بالخيوط الطبية لتبدو العين أكثر شباباً وصحة.',
-    descEn: 'Treatment of droopy eyelids, removal of puffy eye bags, and cosmetic eyelid thread lifting to restore a youthful, healthy look.',
-    benefitsAr: [
-      'شد الجفون العلوية والسفلية جراحياً وبندبات غير مرئية',
-      'إزالة الدهون الزائدة والأكياس المسببة للمظهر المتعب',
-      'استخدام خيوط شد الجفون التجميلية بدون جراحة كبيرة',
-      'تحسين المظهر الخارجي ومجال الرؤية المتأثر بترهل الجفن'
-    ],
-    benefitsEn: [
-      'Surgical upper and lower blepharoplasty with hidden scars',
-      'Removal of herniated fat and bags causing a tired look',
-      'Eyelid cosmetic thread lifting with no major surgery',
-      'Improving both cosmetic appearance and visual field blocked by droopiness'
-    ],
-    body: [
-      {
-        type: 'p',
-        contentAr: 'لا يقتصر ترهل الجفون على الجانب التجميلي فحسب، بل قد يتسبب في إعاقة مجال الرؤية العلوي للمريض نتيجة هبوط الجلد الزائد فوق الرموش. تقدم عيادتنا حلولاً تجميلية وعلاجية متكاملة للجفون.',
-        contentEn: 'Eyelid sagging is not just a cosmetic issue; it can obstruct the patient\'s superior visual field due to excess skin hanging over the eyelashes. Our clinic provides comprehensive cosmetic and therapeutic solutions for eyelids.'
-      },
-      {
-        type: 'h2',
-        contentAr: 'خيارات تجميل وشد الجفون:',
-        contentEn: 'Eyelid Lift & Cosmetic Options:'
-      },
-      {
-        type: 'ul',
-        contentAr: '',
-        contentEn: '',
-        items: [
-          {
-            contentAr: 'جراحة تجميل الجفون (Blepharoplasty): يتم فيها التخلص من الترهل والدهون الزائدة عبر شقوق جراحية مخفية تماماً في طيات الجلد الطبيعية.',
-            contentEn: 'Blepharoplasty: Removes droopy skin and excess fat bags through surgical incisions hidden in the natural skin folds.'
-          },
-          {
-            contentAr: 'شد الجفون بالخيوط (Thread Lift): تقنية غير جراحية لرفع الحاجب والجفن العلوي لتعطي عيناً مشدودة ومظهراً متألقاً بشكل فوري وبفترة نقاهة قصيرة.',
-            contentEn: 'Eyelid Thread Lift: A non-surgical technique to lift the eyebrows and upper eyelids, delivering a pulled-back youthful gaze with minimal recovery time.'
-          }
-        ]
-      }
-    ]
-  },
+
   {
     id: 'vein-occlusion',
     icon: 'Activity',
@@ -527,7 +481,7 @@ export const services: ServiceData[] = [
     descAr: 'إدارة متكاملة وعلاج سريع لحالات انسداد الوريد الشبكي لتجنب فقدان البصر الدائم والسيطرة على الارتشاح والنزيف.',
     descEn: 'Comprehensive management and urgent treatment of retinal vein occlusions to avoid permanent blindness and control macular edema and hemorrhage.',
     benefitsAr: [
-      'تشخيص فوري وقياس تدفق الدم بجهاز الـ OCT والصبغات',
+      'تشخيص فوري وقياس تدفق الدم بفحص قاع العين والصبغات',
       'حقن مضادات الـ VEGF لمنع نمو أوعية دموية ضارة جديدة',
       'علاج الارتشاح البقعي المصاحب للجلطة بفاعلية وسرعة',
       'جلسات ليزر شبكية وقائية لمنع تكرار النزيف والضغط المرتفع'

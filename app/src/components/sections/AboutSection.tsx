@@ -127,7 +127,7 @@ export default function AboutSection() {
                   { ar: 'عضو جمعية الشبكية الأوروبية (EURETINA)', en: 'Member of the European Society of Retina Specialists (EURETINA)' },
                   { ar: 'عضو الجمعية الشبكية المصرية (EGVRS)', en: 'Member of the Egyptian Vitreoretinal Society (EGVRS)' },
                   { ar: 'عضو الجمعية الرمدية المصرية (EOS)', en: 'Member of the Egyptian Ophthalmological Society (EOS)' },
-                  { ar: 'عضو المجلس الطبي العالمي لأساسيات طب العيون (ICO)', en: 'Member of the International Council of Ophthalmology (ICO)' },
+                  { ar: 'زمالة المجلس الطبي العالمي لأساسيات طب العيون (ICO)', en: 'Fellowship of the International Council of Ophthalmology (ICO)' },
                   { ar: 'عضو الأكاديمية الأمريكية لطب العيون (AAO)', en: 'Member of the American Academy of Ophthalmology (AAO)' },
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-2.5 text-sm text-slate-custom leading-relaxed">
@@ -153,7 +153,7 @@ export default function AboutSection() {
                   { ar: 'أستاذ بكلية الطب – جامعة القاهرة (قصر العيني).', en: 'Professor at Faculty of Medicine – Cairo University (Kasr Al-Ainy).' },
                   { ar: 'استشاري طب وجراحة العيون وجراحة الشبكية لدى مستشفى العيون الدولي.', en: 'Consultant of Ophthalmology and Vitreoretinal Surgery at International Eye Hospital.' },
                   { ar: 'استشاري معتمد بوزارة الصحة ونقابة الأطباء المصرية.', en: 'Certified Ophthalmology Consultant by the MOH & Syndicate.' },
-                  { ar: 'طبيب استشاري بمركز نور العيون التخصصي – الهرم (الشبكية والليزك).', en: 'Consultant Ophthalmologist at Nour El-Oyoun Specialized Center.' },
+                  { ar: 'طبيب استشاري بمركز نور العيون التخصصي – الهرم (الشبكية والمياه البيضاء والليزك).', en: 'Consultant Ophthalmologist at Nour El-Oyoun Specialized Center (Retina, Cataract & LASIK).' },
                   { ar: 'تدريب الأطباء المقيمين وورش العمل التخصصية بقصر العيني.', en: 'Training ophthalmology residents and holding clinical workshops at Kasr Al-Ainy.' }
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-2.5 text-sm text-slate-custom leading-relaxed">
@@ -176,8 +176,8 @@ export default function AboutSection() {
               </h3>
               <p className="text-slate-custom text-xs md:text-sm leading-relaxed mb-4">
                 {lang === 'ar'
-                  ? 'تشخيص متكامل بأدق الأجهزة مثل مجهر المصباح الشقي (Slit Lamp) للفحص العياني، وأشعة الـ OCT للشبكية.'
-                  : 'Accurate diagnoses using Slit Lamp microscopes, OCT optical scanning, and advanced ocular ultrasound.'}
+                  ? 'تشخيص متكامل بأدق الأجهزة مثل مجهر المصباح الشقي (Slit Lamp) للفحص الإكلينيكي، وفحص قاع العين.'
+                  : 'Accurate diagnoses using Slit Lamp microscopes, and advanced fundus examination.'}
               </p>
 
               {/* Sub-grid of images */}
@@ -217,7 +217,7 @@ export default function AboutSection() {
         {/* Spaced Call to Action Button */}
         <div className="text-center mt-14">
           <a 
-            href="#booking" 
+            href="https://wa.me/201110505253?text=%D8%B9%D8%A7%D9%8A%D8%B2%20%D8%A7%D8%AD%D8%AC%D8%B2%20%D8%A7%D9%84%D8%A7%D9%86" target="_blank" rel="noopener noreferrer" 
             className="about-cta inline-flex items-center px-8 py-4 bg-medical-blue text-white text-sm font-semibold rounded-xl hover:bg-electric-blue transition-all duration-300 hover:-translate-y-0.5 hover:shadow-cta"
           >
             {t('about.cta', lang)}
