@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { LanguageProvider } from '@/context/LanguageContext';
 import Navigation from '@/components/layout/Navigation';
 import Footer from '@/components/layout/Footer';
-import EmergencyButton from '@/components/layout/EmergencyButton';
 import WhatsAppButton from '@/components/layout/WhatsAppButton';
 import ScrollProgress from '@/components/layout/ScrollProgress';
 import HomePage from '@/pages/HomePage';
@@ -32,7 +31,6 @@ function App() {
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
           <Footer />
-          <EmergencyButton />
           <WhatsAppButton />
         </div>
       </BrowserRouter>
