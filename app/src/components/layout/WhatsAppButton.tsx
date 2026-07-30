@@ -1,5 +1,5 @@
 import { useLanguage } from '@/context/LanguageContext';
-import { MessageCircle, Phone } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 
 export default function WhatsAppButton() {
   const { lang } = useLanguage();
@@ -31,18 +31,6 @@ export default function WhatsAppButton() {
         <MessageCircle size={28} className="relative z-10" />
         <span className="relative z-10 font-bold text-base md:text-lg">
           {lang === 'ar' ? 'واتساب الفيوم' : 'Fayoum WhatsApp'}
-        </span>
-      </a>
-
-      {/* Phone */}
-      <a
-        href="tel:01110505253"
-        className="relative px-6 h-14 rounded-full bg-medical-blue flex items-center justify-center gap-3 text-white shadow-xl hover:scale-105 transition-transform duration-300"
-        aria-label="Phone"
-      >
-        <Phone size={26} className="relative z-10" />
-        <span className="relative z-10 font-bold text-base md:text-lg">
-          {lang === 'ar' ? 'فون' : 'Call Us'}
         </span>
       </a>
     </div>
