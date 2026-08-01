@@ -97,32 +97,34 @@ export default function AboutPage() {
   return (
     <div ref={pageRef} className="min-h-screen bg-[#F7F9FC]">
       {/* Physician JSON-LD Schema */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-        "@context": "https://schema.org",
-        "@type": "Physician",
-        "name": "أ.د. أحمد عبدالله مهلهل",
-        "alternateName": "Prof. Dr. Ahmed Abdullah Mohelhel",
-        "jobTitle": "أستاذ طب وجراحة العيون",
-        "description": "أستاذ طب وجراحة العيون بجامعة القاهرة (قصر العيني) واستشاري جراحات الشبكية والمياه البيضاء وتصحيح الإبصار",
-        "medicalSpecialty": "Ophthalmology",
-        "image": "https://dr-ahmedmehalhel.com/images/doctor-portrait.png",
-        "url": "https://dr-ahmedmehalhel.com/about",
-        "telephone": "+201110505253",
-        "yearsOfExperience": "27",
-        "hasCredential": [
-          { "@type": "EducationalOccupationalCredential", "credentialCategory": "Bachelor", "recognizedBy": { "@type": "EducationalOrganization", "name": "جامعة القاهرة - قصر العيني" } },
-          { "@type": "EducationalOccupationalCredential", "credentialCategory": "Master", "recognizedBy": { "@type": "EducationalOrganization", "name": "جامعة القاهرة - قصر العيني" } },
-          { "@type": "EducationalOccupationalCredential", "credentialCategory": "PhD", "recognizedBy": { "@type": "EducationalOrganization", "name": "جامعة القاهرة - قصر العيني" } },
-          { "@type": "EducationalOccupationalCredential", "credentialCategory": "Professor", "recognizedBy": { "@type": "EducationalOrganization", "name": "جامعة القاهرة - قصر العيني" } }
-        ],
-        "alumniOf": { "@type": "EducationalOrganization", "name": "جامعة القاهرة - كلية الطب (قصر العيني)" },
-        "worksFor": { "@type": "EducationalOrganization", "name": "جامعة القاهرة - قصر العيني" },
-        "memberOf": [
-          { "@type": "MedicalOrganization", "name": "الجمعية المصرية لطب العيون" },
-          { "@type": "MedicalOrganization", "name": "الجمعية العربية لطب العيون" }
-        ],
-        "address": { "@type": "PostalAddress", "streetAddress": "برج الإخلاص للأطباء، 96 أ شارع التحرير، الدقي", "addressLocality": "الجيزة", "addressCountry": "EG" }
-      })}} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{
+        __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Physician",
+          "name": "أ.د. أحمد عبدالله مهلهل",
+          "alternateName": "Prof. Dr. Ahmed Abdullah Mohelhel",
+          "jobTitle": "أستاذ طب وجراحة العيون",
+          "description": "أستاذ طب وجراحة العيون بجامعة القاهرة (قصر العيني) واستشاري جراحات الشبكية والمياه البيضاء وتصحيح الإبصار",
+          "medicalSpecialty": "Ophthalmology",
+          "image": "https://dr-ahmedmehalhel.com/images/doctor-portrait.png",
+          "url": "https://dr-ahmedmehalhel.com/about",
+          "telephone": "+201110505253",
+          "yearsOfExperience": "27",
+          "hasCredential": [
+            { "@type": "EducationalOccupationalCredential", "credentialCategory": "Bachelor", "recognizedBy": { "@type": "EducationalOrganization", "name": "جامعة القاهرة - قصر العيني" } },
+            { "@type": "EducationalOccupationalCredential", "credentialCategory": "Master", "recognizedBy": { "@type": "EducationalOrganization", "name": "جامعة القاهرة - قصر العيني" } },
+            { "@type": "EducationalOccupationalCredential", "credentialCategory": "PhD", "recognizedBy": { "@type": "EducationalOrganization", "name": "جامعة القاهرة - قصر العيني" } },
+            { "@type": "EducationalOccupationalCredential", "credentialCategory": "Professor", "recognizedBy": { "@type": "EducationalOrganization", "name": "جامعة القاهرة - قصر العيني" } }
+          ],
+          "alumniOf": { "@type": "EducationalOrganization", "name": "جامعة القاهرة - كلية الطب (قصر العيني)" },
+          "worksFor": { "@type": "EducationalOrganization", "name": "جامعة القاهرة - قصر العيني" },
+          "memberOf": [
+            { "@type": "MedicalOrganization", "name": "الجمعية المصرية لطب العيون" },
+            { "@type": "MedicalOrganization", "name": "الجمعية العربية لطب العيون" }
+          ],
+          "address": { "@type": "PostalAddress", "streetAddress": "برج الإخلاص للأطباء، 96 أ شارع التحرير، الدقي", "addressLocality": "الجيزة", "addressCountry": "EG" }
+        })
+      }} />
 
       {/* Hero */}
       <div className="bg-deep-navy pt-32 pb-20 relative overflow-hidden">
