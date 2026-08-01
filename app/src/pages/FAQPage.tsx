@@ -59,6 +59,7 @@ export default function FAQPage() {
     keywords: lang === 'ar'
       ? 'اسئلة واجوبة ليزك, كشف عيون الدقي, كشف عيون الفيوم, اسعار كشف المياه البيضاء, حجز عيادة عيون'
       : 'LASIK FAQ, Dokki eye exam, Fayoum ophthalmologist, cataract surgery cost, book eye doctor Cairo',
+    path: '/faq',
     lang
   });
 
@@ -86,6 +87,19 @@ export default function FAQPage() {
 
   return (
     <div ref={pageRef} className="min-h-screen bg-[#F8FAFC]">
+      {/* FAQ JSON-LD Schema for Google Rich Results */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": faqs.map(faq => ({
+          "@type": "Question",
+          "name": faq.qAr,
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.aAr
+          }
+        }))
+      })}} />
       {/* Page Header */}
       <div className="pt-28 pb-10 bg-white border-b border-divider/50">
         <div className="content-container">
