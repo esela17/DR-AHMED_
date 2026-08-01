@@ -8,11 +8,12 @@ import { useNavigate, useLocation } from 'react-router-dom';
 
 const primaryLinks = [
   { key: 'nav.home', href: '#hero' },
-  { key: 'nav.about', href: '#about' },
+  { key: 'nav.about', href: '/about' },
   { key: 'nav.services', href: '#services' },
   { key: 'nav.blog', href: '/blog' },
   { key: 'nav.contact', href: '#booking' },
 ];
+
 
 const dropdownLinks = [
   { key: 'nav.beforeafter', href: '/before-after' },

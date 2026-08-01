@@ -5,13 +5,14 @@ import { useNavigate } from 'react-router-dom';
 
 const quickLinks = [
   { key: 'nav.home', href: '#hero' },
-  { key: 'nav.about', href: '#about' },
+  { key: 'nav.about', href: '/about' },
   { key: 'nav.services', href: '#services' },
   { key: 'nav.beforeafter', href: '/before-after' },
   { key: 'nav.faq', href: '/faq' },
   { key: 'nav.news', href: '/news' },
   { key: 'nav.blog', href: '/blog' },
 ];
+
 
 const serviceLinks = [
   'service.lasik',
@@ -144,8 +145,9 @@ export default function Footer() {
               <div className="pt-2 space-y-3">
                 <div className="flex items-center gap-2">
                   <Mail size={16} className="text-medical-blue" />
-                  <a href="mailto:info@dramedmohelhel.com" className="hover:text-medical-blue transition-colors text-xs">info@dramedmohelhel.com</a>
+                  <a href="mailto:info@dr-ahmedmehalhel.com" className="hover:text-medical-blue transition-colors text-xs">info@dr-ahmedmehalhel.com</a>
                 </div>
+
                 <a
                   href="https://wa.me/201110505253"
                   target="_blank"
