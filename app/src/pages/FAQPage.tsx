@@ -9,38 +9,45 @@ import gsap from 'gsap';
 const faqs = [
   {
     id: 1,
-    qAr: 'ما هي مدة الكشف الطبي بالعيادة وماذا يتضمن؟',
-    qEn: 'How long does the medical exam take and what does it include?',
-    aAr: 'يستغرق الكشف الطبي الكامل والدقيق من 10 إلى 15 دقيقة. يتضمن قياس ضغط العين الوقائي، فحص حدة الإبصار وتحديد عيوب الانكسار، فحص الجزء الأمامي للعين بمجهر المصباح الشقي، وفحص قاع العين المباشر والشبكية والاطمئنان على العصب البصري والجسم الزجاجي.',
-    aEn: 'The comprehensive medical exam takes between 10 to 15 minutes. It includes preventive intraocular pressure checking, visual acuity and refraction measurements, slit-lamp examination of the anterior segment, and direct dilated fundus retinal check to inspect the optic nerve and vitreous humor.'
+    qAr: 'مين أحسن دكتور عيون لعملية الليزك؟',
+    qEn: 'Who is the best eye doctor for LASIK?',
+    aAr: 'يعتبر أ.د. أحمد عبدالله مهلهل من أفضل أطباء العيون لعمليات الليزك، فهو أستاذ طب وجراحة العيون بقصر العيني وخبير في تصحيح الإبصار بالليزر والفيمتو ليزك بخبرة تتجاوز 27 عاماً بالفيوم والدقي.',
+    aEn: 'Prof. Dr. Ahmed Abdullah Mohelhel is considered one of the best eye doctors for LASIK. He is a professor at Kasr Al-Ainy with over 27 years of experience in laser vision correction in Fayoum and Dokki.'
   },
   {
     id: 2,
-    qAr: 'هل عمليات تصحيح الإبصار بالليزر (الليزك) مؤلمة؟',
-    qEn: 'Are laser vision correction surgeries (LASIK) painful?',
-    aAr: 'العمليات غير مؤلمة تماماً بفضل استخدام قطرات التخدير الموضعي. قد يشعر المريض بضغط بسيط جداً لدقائق معدودة أثناء العملية. فترة التعافي سريعة جداً حيث تظهر النتائج ويتحسن الإبصار خلال أول 24 ساعة.',
-    aEn: 'The procedures are entirely painless due to the use of local drop anesthesia. The patient might feel a slight pressure for a couple of minutes during the procedure. Recovery is highly accelerated, and patients experience sharp vision within 24 hours.'
+    qAr: 'إمتى أحتاج أعمل عملية مياه بيضاء؟',
+    qEn: 'When do I need cataract surgery?',
+    aAr: 'تحتاج لعملية مياه بيضاء عندما تؤثر ضبابية الرؤية وزغللة العين على أنشطتك اليومية مثل القراءة أو القيادة، ويتم التدخل بأحدث تقنيات الفاكو واليزر لضمان أفضل نتيجة بأمان.',
+    aEn: 'You need cataract surgery when blurry vision affects your daily activities like reading or driving. It is performed safely using advanced Phaco and laser techniques.'
   },
   {
     id: 3,
-    qAr: 'ما هي طرق الدفع المعتمدة للحجوزات والعمليات؟',
-    qEn: 'What are the approved payment methods for booking and surgeries?',
-    aAr: 'تسهيلاً لإجراءات العمل الإدارية بالعيادة، يتم دفع رسوم الكشف الطبي والمتابعات نقداً (Cash) فقط بالعيادة. للعمليات الجراحية الكبرى، يرجى التنسيق المسبق مع إدارة الفرع.',
-    aEn: 'To simplify administrative workflows in the clinics, medical examination and follow-up fees are payable in cash only at the clinic. For major surgeries, please coordinate in advance with the branch administration.'
+    qAr: 'هل عملية الليزك بتوجع؟',
+    qEn: 'Is LASIK surgery painful?',
+    aAr: 'العملية غير مؤلمة تماماً بفضل استخدام قطرات التخدير الموضعي. قد تشعر بضغط بسيط جداً لثوانٍ معدودة أثناء العملية. التعافي سريع وتتحسن الرؤية خلال أول 24 ساعة.',
+    aEn: 'The procedure is entirely painless due to the use of local anesthetic drops. You might feel a slight pressure for a few seconds. Recovery is fast, with improved vision within 24 hours.'
   },
   {
     id: 4,
-    qAr: 'هل عيادات أ.د. أحمد عبدالله مهلهل مجهزة لاستقبال كبار السن وذوي الاحتياجات الخاصة؟',
-    qEn: 'Are Prof. Ahmed Mohelhel clinics accessible for seniors and disabled patients?',
-    aAr: 'نعم بالتأكيد. تتوفر عياداتنا على مصاعد كهربائية مجهزة بالكامل وممرات ملائمة لتسهيل حركة كبار السن ومرضى جراحات العيون وضمان وصولهم الآمن والدخول والخروج بيسر دون مشقة.',
-    aEn: 'Yes, absolutely. Our clinics are located in modern towers equipped with elevators and spacious entry paths to facilitate easy and comfortable access for elderly patients and those recovering from ophthalmic operations.'
+    qAr: 'إيه الفرق بين الفيمتو ليزك والليزك العادي؟',
+    qEn: 'What is the difference between Femto-LASIK and regular LASIK?',
+    aAr: 'في الفيمتو ليزك يتم استخدام ليزر دقيق جداً (الفيمتو ثانية) لرفع قشرة القرنية بدلاً من المشرط الدقيق المستخدم في الليزك العادي، مما يجعله أكثر أماناً، أسرع في التعافي، وأقل ألماً، ويصلح لدرجات ضعف النظر الأكبر.',
+    aEn: 'In Femto-LASIK, a highly precise femtosecond laser is used to create the corneal flap instead of the microkeratome blade used in regular LASIK, making it safer, faster to heal, and suitable for higher prescriptions.'
   },
   {
     id: 5,
-    qAr: 'كيف يمكنني تأكيد أو تعديل موعد الحجز الخاص بي؟',
-    qEn: 'How can I confirm or modify my appointment slot?',
-    aAr: 'بعد إرسال نموذج الحجز الإلكتروني عبر الموقع، سيقوم الفريق الطبي بالتواصل معك لتأكيد الموعد وإرسال تفاصيل الحجز وتنبيهات التذكير عبر الواتساب. يمكنك التواصل مباشرة لمراجعة الحجوزات أو الاستفسار عبر رقم الواتساب المخصص: 01110505253.',
-    aEn: 'Upon submitting the online booking form, our medical staff will contact you to confirm the exact slot and send confirmation alerts and reminders via WhatsApp. You can coordinate or ask questions directly on the designated WhatsApp line: 01110505253.'
+    qAr: 'إزاي أحجز كشف عيون أونلاين؟',
+    qEn: 'How can I book an eye exam online?',
+    aAr: 'يمكنك بسهولة حجز موعد دكتور عيون عبر موقعنا عن طريق إرسال نموذج الحجز الإلكتروني أو بالاتصال على رقم دكتور عيون العيادة 01110505253 (مكالمة أو واتساب) لتحديد أقرب موعد.',
+    aEn: 'You can easily book an eye exam through our website by submitting the online booking form or calling the clinic directly at 01110505253 to schedule your appointment.'
+  },
+  {
+    id: 6,
+    qAr: 'ما هي مدة الكشف الطبي بالعيادة وماذا يتضمن؟',
+    qEn: 'How long does the medical exam take and what does it include?',
+    aAr: 'يستغرق الكشف الطبي الكامل والدقيق من 10 إلى 15 دقيقة. يتضمن قياس ضغط العين الوقائي، فحص حدة الإبصار وتحديد عيوب الانكسار، فحص الجزء الأمامي للعين، وفحص قاع العين المباشر والشبكية.',
+    aEn: 'The comprehensive medical exam takes between 10 to 15 minutes. It includes preventive intraocular pressure checking, visual acuity and refraction measurements, anterior segment examination, and direct dilated fundus check.'
   }
 ];
 
